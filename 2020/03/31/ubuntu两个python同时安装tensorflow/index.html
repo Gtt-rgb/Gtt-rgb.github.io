@@ -65,7 +65,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">129字</span>
+            <span class="post-count">184字</span>
         </span>
     </span>
 
@@ -99,11 +99,19 @@
       
 
       
-      <p><em>本文主要对ubuntu 16.04系统自带python 2.7、python3.5同时安装tensorflow，及验证是否安装成功</em></p>
-<h2 id="1、两个python安装tensorflow的详细教程"><a href="#1、两个python安装tensorflow的详细教程" class="headerlink" title="1、两个python安装tensorflow的详细教程"></a>1、<a href="https://blog.csdn.net/qq_41833285/article/details/99682549" target="_blank" rel="noopener">两个python安装tensorflow的详细教程</a></h2><h2 id="2、单个python版本tensorflow-gpu的安装"><a href="#2、单个python版本tensorflow-gpu的安装" class="headerlink" title="2、单个python版本tensorflow-gpu的安装"></a>2、<a href="https://blog.csdn.net/sakura__lu/article/details/80622396" target="_blank" rel="noopener">单个python版本tensorflow-gpu的安装</a></h2><h2 id="3、单个python版本tensorflow-gpu的安装2"><a href="#3、单个python版本tensorflow-gpu的安装2" class="headerlink" title="3、单个python版本tensorflow-gpu的安装2"></a>3、<a href="https://blog.csdn.net/macunshi/article/details/84638675" target="_blank" rel="noopener">单个python版本tensorflow-gpu的安装2</a></h2><h2 id="4、测试CUDA是否能用"><a href="#4、测试CUDA是否能用" class="headerlink" title="4、测试CUDA是否能用"></a>4、<a href="https://zhidao.baidu.com/question/1308108448353167699.html" target="_blank" rel="noopener">测试CUDA是否能用</a></h2><h2 id="5、测试tensor-gpu是否可用"><a href="#5、测试tensor-gpu是否可用" class="headerlink" title="5、测试tensor gpu是否可用"></a>5、<a href="https://blog.csdn.net/lidichengfo0412/article/details/102637824" target="_blank" rel="noopener">测试tensor gpu是否可用</a></h2><p><strong><em>安装过程存在的问题</em></strong></p>
-<h3 id="1、运行pip-提示-warning-RequestsDependencyWarning-解决方案"><a href="#1、运行pip-提示-warning-RequestsDependencyWarning-解决方案" class="headerlink" title="1、运行pip 提示(warning, RequestsDependencyWarning)解决方案"></a>1、<a href="https://www.jianshu.com/p/1072e97d5733" target="_blank" rel="noopener">运行pip 提示(warning, RequestsDependencyWarning)解决方案</a></h3><p><strong><em>可选</em></strong></p>
-<h3 id="1、修改ubuntu两个python优先级"><a href="#1、修改ubuntu两个python优先级" class="headerlink" title="1、修改ubuntu两个python优先级"></a>1、<a href="https://www.cnblogs.com/elitphil/p/11525951.html" target="_blank" rel="noopener">修改ubuntu两个python优先级</a></h3><p><strong><em>注意</em></strong></p>
-<h3 id="在python2-7安装功能包时要用pip2，在python3-5安装功能包时要用pip3！！！！"><a href="#在python2-7安装功能包时要用pip2，在python3-5安装功能包时要用pip3！！！！" class="headerlink" title="在python2.7安装功能包时要用pip2，在python3.5安装功能包时要用pip3！！！！"></a>在python2.7安装功能包时要用pip2，在python3.5安装功能包时要用pip3！！！！</h3>
+      <blockquote>
+<p><strong>本文主要对ubuntu 16.04系统自带python 2.7、python3.5同时安装tensorflow，及验证是否安装成功</strong></p>
+</blockquote>
+<h2 id="1、两个python安装tensorflow的详细教程"><a href="#1、两个python安装tensorflow的详细教程" class="headerlink" title="1、两个python安装tensorflow的详细教程"></a>1、<a href="https://blog.csdn.net/qq_41833285/article/details/99682549" target="_blank" rel="noopener">两个python安装tensorflow的详细教程</a></h2><h2 id="2、单个python版本tensorflow-gpu的安装"><a href="#2、单个python版本tensorflow-gpu的安装" class="headerlink" title="2、单个python版本tensorflow-gpu的安装"></a>2、<a href="https://blog.csdn.net/sakura__lu/article/details/80622396" target="_blank" rel="noopener">单个python版本tensorflow-gpu的安装</a></h2><h2 id="3、单个python版本tensorflow-gpu的安装2"><a href="#3、单个python版本tensorflow-gpu的安装2" class="headerlink" title="3、单个python版本tensorflow-gpu的安装2"></a>3、<a href="https://blog.csdn.net/macunshi/article/details/84638675" target="_blank" rel="noopener">单个python版本tensorflow-gpu的安装2</a></h2><h2 id="4、测试CUDA是否能用"><a href="#4、测试CUDA是否能用" class="headerlink" title="4、测试CUDA是否能用"></a>4、<a href="https://zhidao.baidu.com/question/1308108448353167699.html" target="_blank" rel="noopener">测试CUDA是否能用</a></h2><h2 id="5、测试tensor-gpu是否可用"><a href="#5、测试tensor-gpu是否可用" class="headerlink" title="5、测试tensor gpu是否可用"></a>5、<a href="https://blog.csdn.net/lidichengfo0412/article/details/102637824" target="_blank" rel="noopener">测试tensor gpu是否可用</a></h2><blockquote>
+<p><strong><strong>安装过程存在的问题</strong></strong></p>
+</blockquote>
+<h3 id="1、运行pip-提示-warning-RequestsDependencyWarning-解决方案"><a href="#1、运行pip-提示-warning-RequestsDependencyWarning-解决方案" class="headerlink" title="1、运行pip 提示(warning, RequestsDependencyWarning)解决方案"></a>1、<a href="https://www.jianshu.com/p/1072e97d5733" target="_blank" rel="noopener">运行pip 提示(warning, RequestsDependencyWarning)解决方案</a></h3><h3 id="2、libcudart-so-8-0-cannot-open-shared-object-file-No-such-file-or-directory-的解决办法"><a href="#2、libcudart-so-8-0-cannot-open-shared-object-file-No-such-file-or-directory-的解决办法" class="headerlink" title="2、libcudart.so.8.0: cannot open shared object file: No such file or directory 的解决办法"></a>2、<a href="https://blog.csdn.net/qq_38451119/article/details/81007904" target="_blank" rel="noopener">libcudart.so.8.0: cannot open shared object file: No such file or directory 的解决办法</a></h3><blockquote>
+<p><strong><strong>可选</strong></strong></p>
+</blockquote>
+<h3 id="1、修改ubuntu两个python优先级"><a href="#1、修改ubuntu两个python优先级" class="headerlink" title="1、修改ubuntu两个python优先级"></a>1、<a href="https://www.cnblogs.com/elitphil/p/11525951.html" target="_blank" rel="noopener">修改ubuntu两个python优先级</a></h3><h3 id="2、ubuntu换源提高下载速度-pip也可设置源"><a href="#2、ubuntu换源提高下载速度-pip也可设置源" class="headerlink" title="2、ubuntu换源提高下载速度(pip也可设置源)"></a>2、<a href="https://blog.csdn.net/u012308586/article/details/102953882" target="_blank" rel="noopener">ubuntu换源提高下载速度(pip也可设置源)</a></h3><blockquote>
+<p><strong><strong>注意</strong></strong></p>
+</blockquote>
+<h3 id="1、在python2-7安装功能包时要用pip2，在python3-5安装功能包时要用pip3！！！！"><a href="#1、在python2-7安装功能包时要用pip2，在python3-5安装功能包时要用pip3！！！！" class="headerlink" title="1、在python2.7安装功能包时要用pip2，在python3.5安装功能包时要用pip3！！！！"></a>1、在python2.7安装功能包时要用pip2，在python3.5安装功能包时要用pip3！！！！</h3><h3 id="2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见tensorflow对应···版本"><a href="#2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见tensorflow对应···版本" class="headerlink" title="2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见tensorflow对应···版本"></a>2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见<a href="https://blog.csdn.net/littlehaes/article/details/100575694" target="_blank" rel="noopener">tensorflow对应···版本</a></h3>
       
       <!-- reward -->
       
