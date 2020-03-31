@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>搭建ROS开发环境</title>
+    <url>/2020/03/31/%E6%90%AD%E5%BB%BAROS%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<p><em>本文主要对ros开发环境进行搭建</em></p>
+<h2 id="1、针对于python语言开发ROS搭建pycharm开发环境"><a href="#1、针对于python语言开发ROS搭建pycharm开发环境" class="headerlink" title="1、针对于python语言开发ROS搭建pycharm开发环境"></a>1、<a href="https://www.cnblogs.com/thebreakofdawn/p/9249372.html" target="_blank" rel="noopener">针对于python语言开发ROS搭建pycharm开发环境</a></h2><h2 id="2、针对于C-语言开发ROS搭建roboware开发环境"><a href="#2、针对于C-语言开发ROS搭建roboware开发环境" class="headerlink" title="2、针对于C++语言开发ROS搭建roboware开发环境"></a>2、<a href="https://www.cnblogs.com/rjjhyj/p/11460793.html" target="_blank" rel="noopener">针对于C++语言开发ROS搭建roboware开发环境</a></h2><p><strong><em>测试</em></strong></p>
+<h3 id="1、ROS下创建第一个节点工程"><a href="#1、ROS下创建第一个节点工程" class="headerlink" title="1、ROS下创建第一个节点工程"></a>1、<a href="https://www.cnblogs.com/blue35sky/p/6078771.html" target="_blank" rel="noopener">ROS下创建第一个节点工程</a></h3><p><strong><em>安装roboware</em></strong></p>
+<h3 id="1、roboware的github地址"><a href="#1、roboware的github地址" class="headerlink" title="1、roboware的github地址"></a>1、<a href="https://github.com/tonyrobotics/RoboWare/tree/master/Studio" target="_blank" rel="noopener">roboware的github地址</a></h3>]]></content>
+      <categories>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ubuntu两个python分别同时安装tensorflow</title>
+    <url>/2020/03/31/ubuntu%E4%B8%A4%E4%B8%AApython%E5%90%8C%E6%97%B6%E5%AE%89%E8%A3%85tensorflow/</url>
+    <content><![CDATA[<p><em>本文主要对ubuntu 16.04系统自带python 2.7、python3.5同时安装tensorflow，及验证是否安装成功</em></p>
+<h2 id="1、两个python安装tensorflow的详细教程"><a href="#1、两个python安装tensorflow的详细教程" class="headerlink" title="1、两个python安装tensorflow的详细教程"></a>1、<a href="https://blog.csdn.net/qq_41833285/article/details/99682549" target="_blank" rel="noopener">两个python安装tensorflow的详细教程</a></h2><h2 id="2、单个python版本tensorflow-gpu的安装"><a href="#2、单个python版本tensorflow-gpu的安装" class="headerlink" title="2、单个python版本tensorflow-gpu的安装"></a>2、<a href="https://blog.csdn.net/sakura__lu/article/details/80622396" target="_blank" rel="noopener">单个python版本tensorflow-gpu的安装</a></h2><h2 id="3、单个python版本tensorflow-gpu的安装2"><a href="#3、单个python版本tensorflow-gpu的安装2" class="headerlink" title="3、单个python版本tensorflow-gpu的安装2"></a>3、<a href="https://blog.csdn.net/macunshi/article/details/84638675" target="_blank" rel="noopener">单个python版本tensorflow-gpu的安装2</a></h2><h2 id="4、测试CUDA是否能用"><a href="#4、测试CUDA是否能用" class="headerlink" title="4、测试CUDA是否能用"></a>4、<a href="https://zhidao.baidu.com/question/1308108448353167699.html" target="_blank" rel="noopener">测试CUDA是否能用</a></h2><h2 id="5、测试tensor-gpu是否可用"><a href="#5、测试tensor-gpu是否可用" class="headerlink" title="5、测试tensor gpu是否可用"></a>5、<a href="https://blog.csdn.net/lidichengfo0412/article/details/102637824" target="_blank" rel="noopener">测试tensor gpu是否可用</a></h2><p><strong><em>安装过程存在的问题</em></strong></p>
+<h3 id="1、运行pip-提示-warning-RequestsDependencyWarning-解决方案"><a href="#1、运行pip-提示-warning-RequestsDependencyWarning-解决方案" class="headerlink" title="1、运行pip 提示(warning, RequestsDependencyWarning)解决方案"></a>1、<a href="https://www.jianshu.com/p/1072e97d5733" target="_blank" rel="noopener">运行pip 提示(warning, RequestsDependencyWarning)解决方案</a></h3><p><strong><em>可选</em></strong></p>
+<h3 id="1、修改ubuntu两个python优先级"><a href="#1、修改ubuntu两个python优先级" class="headerlink" title="1、修改ubuntu两个python优先级"></a>1、<a href="https://www.cnblogs.com/elitphil/p/11525951.html" target="_blank" rel="noopener">修改ubuntu两个python优先级</a></h3><p><strong><em>注意</em></strong></p>
+<h3 id="在python2-7安装功能包时要用pip2，在python3-5安装功能包时要用pip3！！！！"><a href="#在python2-7安装功能包时要用pip2，在python3-5安装功能包时要用pip3！！！！" class="headerlink" title="在python2.7安装功能包时要用pip2，在python3.5安装功能包时要用pip3！！！！"></a>在python2.7安装功能包时要用pip2，在python3.5安装功能包时要用pip3！！！！</h3>]]></content>
+      <categories>
+        <category>tensorflow</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>针对ros安装存在的rosdep_update问题</title>
     <url>/2020/03/29/%E9%92%88%E5%AF%B9ros%E5%AE%89%E8%A3%85%E5%AD%98%E5%9C%A8%E7%9A%84rosdep-update%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h1 id="对于ROS安装存在的rosdep-update与sudo-rosdep-init问题，解决方案如下"><a href="#对于ROS安装存在的rosdep-update与sudo-rosdep-init问题，解决方案如下" class="headerlink" title="对于ROS安装存在的rosdep-update与sudo rosdep init问题，解决方案如下"></a>对于ROS安装存在的rosdep-update与sudo rosdep init问题，解决方案如下</h1><h2 id="1、rosdep-init失败提示error··不能下载、网站不能访问等。"><a href="#1、rosdep-init失败提示error··不能下载、网站不能访问等。" class="headerlink" title="1、rosdep init失败提示error··不能下载、网站不能访问等。"></a>1、rosdep init失败提示error··不能下载、网站不能访问等。</h2><p>  可直接在浏览器访问终端提示的链接，将其内容复制到sourse-list中的20-······文件（文件名在浏览器中已提示）。之后跳过rosdep init即可。</p>
