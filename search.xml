@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>git使用</title>
+    <url>/2020/04/01/git%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<blockquote>
+<p><strong>利用git建立本地仓库管理文章与代码，及上传至github</strong></p>
+<h2 id="1、利用git管理本地仓库并上传github"><a href="#1、利用git管理本地仓库并上传github" class="headerlink" title="1、利用git管理本地仓库并上传github"></a>1、<a href="https://baijiahao.baidu.com/s?id=1619544681032320225&wfr=spider&for=pc" target="_blank" rel="noopener">利用git管理本地仓库并上传github</a></h2><p><strong>&gt; 可选</strong><br>1、<a href="https://www.yiibai.com/git/git_push.html" target="_blank" rel="noopener">git教程(全)</a><br>2、<a href="https://blog.csdn.net/qq_32384249/article/details/73038413?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">git找回本地误删的文件</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>初学tensorflow—线性回归</title>
+    <url>/2020/04/01/%E5%88%9D%E5%AD%A6tensorflow%E2%80%94%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>搭建ROS开发环境</title>
     <url>/2020/03/31/%E6%90%AD%E5%BB%BAROS%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
     <content><![CDATA[<p><em>本文主要对ros开发环境进行搭建</em></p>
