@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    git使用 |  搬砖工的故事
+    初学tensorflow-tensorboard使用 |  搬砖工的故事
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -33,7 +33,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="post-git使用" class="article article-type-post" itemscope
+  <article id="post-初学tensorflow-tensorboard使用" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -41,7 +41,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  git使用
+  初学tensorflow-tensorboard使用
 </h1>
  
 
@@ -50,12 +50,12 @@
 
     
     <div class="article-meta">
-      <a href="/2020/04/01/git%E4%BD%BF%E7%94%A8/" class="article-date">
-  <time datetime="2020-04-01T13:54:43.000Z" itemprop="datePublished">2020-04-01</time>
+      <a href="/2020/04/02/%E5%88%9D%E5%AD%A6tensorflow-tensorboard%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time datetime="2020-04-02T02:37:30.000Z" itemprop="datePublished">2020-04-02</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a>
+    <a class="article-category-link" href="/categories/tensorflow/">tensorflow</a>
   </div>
 
       
@@ -65,7 +65,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">53字</span>
+            <span class="post-count">412字</span>
         </span>
     </span>
 
@@ -100,9 +100,48 @@
 
       
       <blockquote>
-<p><strong>利用git建立本地仓库管理文章与代码，及上传至github</strong></p>
-<h2 id="1、利用git管理本地仓库并上传github"><a href="#1、利用git管理本地仓库并上传github" class="headerlink" title="1、利用git管理本地仓库并上传github"></a>1、<a href="https://baijiahao.baidu.com/s?id=1619544681032320225&wfr=spider&for=pc" target="_blank" rel="noopener">利用git管理本地仓库并上传github</a></h2><p><strong>&gt; 可选</strong><br>1、<a href="https://www.yiibai.com/git/git_push.html" target="_blank" rel="noopener">git教程(全)</a><br>2、<a href="https://blog.csdn.net/qq_32384249/article/details/73038413?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">git找回本地误删的文件</a></p>
+<p><strong>在1线性回归基础上，利用tensorboard进行可视化。</strong></p>
 </blockquote>
+<h3 id="1、显示网络框架"><a href="#1、显示网络框架" class="headerlink" title="1、显示网络框架"></a>1、显示网络框架</h3><pre><code>with tf.name_scope(&apos;inputs&apos;):
+   xs = tf.placeholder(tf.float32, [None, 1], name=&apos;x_input&apos;)
+   ys = tf.placeholder(tf.float32, [None, 1], name=&apos;y_input&apos;)</code></pre><ul>
+<li>例子如上：可视化1线性回归的输入层。通过<code>with tf.name_scope(xxx):</code>命令可以可视化网络的任意结构。</li>
+</ul>
+<hr>
+<h3 id="2、显示权重、偏置数据"><a href="#2、显示权重、偏置数据" class="headerlink" title="2、显示权重、偏置数据"></a>2、显示权重、偏置数据</h3><pre><code>Weights = tf.Variable(tf.random_normal([in_size, out_size]), name=&apos;W&apos;)
+tf.summary.histogram(layer_name + &apos;/weights&apos;, Weights)</code></pre><ul>
+<li>例子如上：可视化权重数据。通过<code>tf.summary.histogram（xxx，xxx）</code>可视化数据信息。</li>
+</ul>
+<hr>
+<h3 id="3、显示损失数据"><a href="#3、显示损失数据" class="headerlink" title="3、显示损失数据"></a>3、显示损失数据</h3><pre><code>loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys - prediction),
+                                        reduction_indices=[1]))
+tf.summary.scalar(&apos;loss&apos;, loss)</code></pre><ul>
+<li>例子如上：可视化损失数据。通过<code>tf.summary.scalar(xxx, loss)</code>可视化损失信息。</li>
+</ul>
+<hr>
+<h3 id="4、（1，2，3）步需要以下命令相配合"><a href="#4、（1，2，3）步需要以下命令相配合" class="headerlink" title="4、（1，2，3）步需要以下命令相配合"></a>4、（1，2，3）步需要以下命令相配合</h3><pre><code>sess = tf.Session()
+writer = tf.summary.FileWriter(&quot;logs/&quot;, sess.graph)
+merged = tf.summary.merge_all()</code></pre><ul>
+<li>含义：建立文件，存储融合数据。</li>
+<li>注意：此时没有数据，显示的是网络结构与数据框图。</li>
+</ul>
+<hr>
+<pre><code>result = sess.run(merged,
+                          feed_dict={xs: x_data, ys: y_data})
+writer.add_summary(result, i)</code></pre><ul>
+<li>含义：将数据丢入模型（此处丢入的是merged，不是train！！），得到一批数据，将数据加入到数据融合文件，系统会自动将数据显示在数据框图中。</li>
+</ul>
+<hr>
+<h3 id="5、可视化截图"><a href="#5、可视化截图" class="headerlink" title="5、可视化截图"></a>5、可视化截图</h3><ul>
+<li>tensorboard启动：在存储数据文件目录下，输入<code>tensorboard --logdir==“logs\”</code>，在浏览器输入<code>localhost：6006</code>即可。</li>
+</ul>
+<hr>
+<h2 id><a href="#" class="headerlink" title></a><img src="/2020/04/02/%E5%88%9D%E5%AD%A6tensorflow-tensorboard%E4%BD%BF%E7%94%A8/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84.jpg" alt="1、网络结构"></h2><h2 id="-1"><a href="#-1" class="headerlink" title></a><img src="/2020/04/02/%E5%88%9D%E5%AD%A6tensorflow-tensorboard%E4%BD%BF%E7%94%A8/%E6%9D%83%E9%87%8D%E5%8F%8A%E5%81%8F%E7%BD%AE%E6%95%B0%E6%8D%AE.jpg" alt="2、权重及偏置"></h2><p><img src="/2020/04/02/%E5%88%9D%E5%AD%A6tensorflow-tensorboard%E4%BD%BF%E7%94%A8/%E6%8D%9F%E5%A4%B1.jpg" alt="3、损失"></p>
+<hr>
+<h3 id="6、代码已上传本人github-其主要根据莫烦代码修改而成。"><a href="#6、代码已上传本人github-其主要根据莫烦代码修改而成。" class="headerlink" title="6、代码已上传本人github,其主要根据莫烦代码修改而成。"></a>6、代码已上传<a href="https://github.com/Gtt-rgb/study_tensorflow" target="_blank" rel="noopener">本人github</a>,其主要根据莫烦代码修改而成。</h3><blockquote>
+<p><strong>注意：计算机名需要设置为英文，中文情况下生成的tensorboard文件乱码</strong></p>
+</blockquote>
+<h3 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h3><p>1、<a href="https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/3-4-A-speed-up-learning/" target="_blank" rel="noopener">莫烦tensorflow教程</a></p>
 
       
       <!-- reward -->
@@ -172,7 +211,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/04/01/git%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/04/02/%E5%88%9D%E5%AD%A6tensorflow-tensorboard%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -190,19 +229,10 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/04/02/%E5%88%9D%E5%AD%A6tensorflow-tensorboard%E4%BD%BF%E7%94%A8/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            初学tensorflow-tensorboard使用
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/04/01/%E5%88%9D%E5%AD%A6tensorflow_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" class="article-nav-link">
+      <a href="/2020/04/01/git%E4%BD%BF%E7%94%A8/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">初学tensorflow—线性回归</div>
+        <div class="article-nav-title">git使用</div>
       </a>
     
   </nav>
