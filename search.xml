@@ -1,6 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>初学tensorflow-CNN</title>
+    <url>/2020/04/03/%E5%88%9D%E5%AD%A6tensorflow-CNN/</url>
+    <content><![CDATA[<blockquote>
+<p><strong>使用CNN对MNIST分类。</strong></p>
+</blockquote>
+<h3 id="1、导入功能包"><a href="#1、导入功能包" class="headerlink" title="1、导入功能包"></a>1、导入功能包</h3><pre><code>import tensorflow.compat.v1 as tf
+tf.disable_eager_execution()
+from tensorflow.examples.tutorials.mnist import input_data</code></pre><hr>
+<h3 id="2、下载MNIST数据集"><a href="#2、下载MNIST数据集" class="headerlink" title="2、下载MNIST数据集"></a>2、下载MNIST数据集</h3><pre><code>mnist = input_data.read_data_sets(&apos;MNIST_data&apos;, one_hot=True)</code></pre><hr>
+<h3 id="3、定义权重方法"><a href="#3、定义权重方法" class="headerlink" title="3、定义权重方法"></a>3、定义权重方法</h3><pre><code>def weight_variable(shape):
+    initial = tf.truncated_normal(shape, stddev=0.1)
+    return tf.Variable(initial)</code></pre><ul>
+<li>此处使用的是truncated_normal（）方法进行初始化权重，在CNN效果好。</li>
+</ul>
+<hr>
+<h3 id="4、定义偏置方法"><a href="#4、定义偏置方法" class="headerlink" title="4、定义偏置方法"></a>4、定义偏置方法</h3><pre><code>def bias_variable(shape):
+    initial = tf.constant(0.1, shape=shape)
+    return tf.Variable(initial)</code></pre><hr>
+<hr>
+<h3 id="5、定义卷积层方法"><a href="#5、定义卷积层方法" class="headerlink" title="5、定义卷积层方法"></a>5、定义卷积层方法</h3><pre><code>def conv2d(x, W):
+    return tf.nn.conv2d(x, W, strides=[1, 1, 1, 1], padding=&apos;SAME&apos;)</code></pre><ul>
+<li>x代表输入image，结构为[simple个数(一般用-1)，图片长，图片宽，图片通道]。w为权重，结构为[卷积核长，卷积核宽，卷积核通道(要与图片通道相等)，卷积核个数]。strides为步长，[固定，x轴移动步数，Y轴移动步数，固定]，pading为全0填充。参考下图可以加深卷积核的理解，重点是理解输出通道以及计算方式。<br><img src="/2020/04/03/%E5%88%9D%E5%AD%A6tensorflow-CNN/%E5%8D%B7%E7%A7%AF.jpg" alt="卷积核"></li>
+</ul>
+<hr>
+<h3 id="6、定义模型输入"><a href="#6、定义模型输入" class="headerlink" title="6、定义模型输入"></a>6、定义模型输入</h3><pre><code>xs = tf.placeholder(tf.float32, [None, 784])#/255. # 28x28
+ys = tf.placeholder(tf.float32, [None, 10])
+keep_prob = tf.placeholder(tf.float32)
+x_image = tf.reshape(xs, [-1, 28, 28, 1])#转换维度[全部例子，图片长，图片宽，图片通道个数]</code></pre><ul>
+<li>mnist数据集被拉成一串，为784列(28<em>28)，所以xs结构为[none，784]。keep_prob为dropout。将mnist数据集还原为28</em>28结构，用作卷积神经网络的输入，x_image作用既如此。</li>
+</ul>
+<hr>
+<h3 id="7、定义模型卷积、池化层"><a href="#7、定义模型卷积、池化层" class="headerlink" title="7、定义模型卷积、池化层"></a>7、定义模型卷积、池化层</h3><pre><code>W_conv1 = weight_variable([5,5, 1,32]) #[卷积核长，卷积核宽，输入图片通道个数，输出图片通道个数]
+b_conv1 = bias_variable([32])
+h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1) #28x28x32
+h_pool1 = max_pool_2x2(h_conv1)#14*14*32
+W_conv2 = weight_variable([5,5, 32,64]) #[卷积核长，卷积核宽，输入图片通道个数，输出图片通道个数]
+b_conv2 = bias_variable([64])
+h_conv2 = tf.nn.relu(conv2d(h_pool1, W_conv2) + b_conv2) #14x14x64
+h_pool2 = max_pool_2x2(h_conv2)#7*7*64</code></pre><ul>
+<li>采用最大池化max_pool_2<em>2（）方法，两层卷积池化后图片结构为7</em>7*64，不断卷积池化的过程就是将图片变小变厚的过程。</li>
+</ul>
+<hr>
+<h3 id="8、定义模型平坦层"><a href="#8、定义模型平坦层" class="headerlink" title="8、定义模型平坦层"></a>8、定义模型平坦层</h3><pre><code>h_pool2_flat = tf.reshape(h_pool2, [-1, 7*7*64])#-1代表全部例子</code></pre><ul>
+<li>平坦层后接全连接层，需要对池化后的数据在进行变形，将其拉成一串。结构为[所有的simple，将[7，7，14]结构转换为7<em>7</em>14]。作为全连接网络的输入。</li>
+</ul>
+<hr>
+<h3 id="9、定义模型全连接层"><a href="#9、定义模型全连接层" class="headerlink" title="9、定义模型全连接层"></a>9、定义模型全连接层</h3><pre><code>W_fc1 = weight_variable([7*7*64, 1024])
+b_fc1 = bias_variable([1024])
+h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
+h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
+W_fc2 = weight_variable([1024, 10])
+b_fc2 = bias_variable([10])
+prediction = tf.nn.softmax(tf.matmul(h_fc1_drop, W_fc2) + b_fc2)</code></pre><ul>
+<li>注意此处使用了dropout方法，通过每次训练过程，使部分神经元不激活，从而避免了过拟合现象。所谓过拟合，即在训练集损失很低，在测试集损失确很高。</li>
+<li>此处使用了两层隐层，激活函数使用softmax，因为要做分类。</li>
+</ul>
+<hr>
+<h3 id="10、模型编译"><a href="#10、模型编译" class="headerlink" title="10、模型编译"></a>10、模型编译</h3><pre><code>cross_entropy = tf.reduce_mean(-tf.reduce_sum(ys * tf.log(prediction),
+                                          reduction_indices=[1])) 
+train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)</code></pre><ul>
+<li>采用交叉熵方法计算损失。</li>
+<li>采用Adam优化器进行参数优化。</li>
+</ul>
+<hr>
+<h3 id="11、参数初始化"><a href="#11、参数初始化" class="headerlink" title="11、参数初始化"></a>11、参数初始化</h3><pre><code>sess = tf.Session()
+init = tf.global_variables_initializer()
+sess.run(init)</code></pre><hr>
+<h3 id="12、模型训练"><a href="#12、模型训练" class="headerlink" title="12、模型训练"></a>12、模型训练</h3><pre><code>for i in range(1000):
+    batch_xs, batch_ys = mnist.train.next_batch(100)
+    sess.run(train_step, feed_dict={xs: batch_xs, ys: batch_ys, keep_prob: 0.5})</code></pre><ul>
+<li>每次丢入模型100个数据进行训练，其结果并不会比全部数据丢入模型效果差。</li>
+</ul>
+<hr>
+<h3 id="13、定义模型评估方法"><a href="#13、定义模型评估方法" class="headerlink" title="13、定义模型评估方法"></a>13、定义模型评估方法</h3><pre><code>def compute_accuracy(v_xs, v_ys):
+    global prediction            
+    y_pre = sess.run(prediction, feed_dict={xs: v_xs, keep_prob: 1})
+    correct_prediction = tf.equal(tf.argmax(y_pre,1), tf.argmax(v_ys,1))
+    accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+    result = sess.run(accuracy, feed_dict={xs: v_xs, ys: v_ys, keep_prob: 1})
+    return result</code></pre><ul>
+<li>计算准确率。</li>
+</ul>
+<hr>
+<pre><code>print(compute_accuracy(
+    mnist.test.images[:1000], mnist.test.labels[:1000]))</code></pre><hr>
+<h3 id="14、代码已上传本人github-其主要根据莫烦代码修改而成。"><a href="#14、代码已上传本人github-其主要根据莫烦代码修改而成。" class="headerlink" title="14、代码已上传本人github,其主要根据莫烦代码修改而成。"></a>14、代码已上传<a href="https://github.com/Gtt-rgb/study_tensorflow" target="_blank" rel="noopener">本人github</a>,其主要根据莫烦代码修改而成。</h3><h3 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h3><p>1、<a href="https://tieba.baidu.com/p/5148050240?red_tag=3270728623" target="_blank" rel="noopener">神经网络黑盒的简单解释(推荐)</a><br>2、<a href="https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/3-4-A-speed-up-learning/" target="_blank" rel="noopener">莫烦tensorflow教程</a></p>
+]]></content>
+      <categories>
+        <category>tensorflow</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+        <tag>CNN</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>初学tensorflow-分类</title>
     <url>/2020/04/02/%E5%88%9D%E5%AD%A6tensorflow-%E5%88%86%E7%B1%BB/</url>
     <content><![CDATA[<blockquote>
@@ -73,7 +169,7 @@ sess.run(init)</code></pre><hr>
     <title>初学tensorflow-tensorboard使用</title>
     <url>/2020/04/02/%E5%88%9D%E5%AD%A6tensorflow-tensorboard%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<blockquote>
-<p><strong>在1线性回归基础上，利用tensorboard进行可视化。</strong></p>
+<p><strong>在线性回归基础上，利用tensorboard进行可视化。</strong></p>
 </blockquote>
 <h3 id="1、显示网络框架"><a href="#1、显示网络框架" class="headerlink" title="1、显示网络框架"></a>1、显示网络框架</h3><pre><code>with tf.name_scope(&apos;inputs&apos;):
    xs = tf.placeholder(tf.float32, [None, 1], name=&apos;x_input&apos;)
