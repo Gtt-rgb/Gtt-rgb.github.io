@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>windows引导问题</title>
+    <title>windows直接对ubuntu磁盘格式化导致的引导问题</title>
     <url>/2020/04/21/windows%E5%BC%95%E5%AF%BC%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<blockquote>
 <p><strong>在windows系统下直接对ubuntu系统所在磁盘进行格式化，会导致开机提示grub rescue问题,解决方案如下：</strong></p>
@@ -453,15 +453,15 @@ writer.add_summary(result, i)</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>git使用</title>
-    <url>/2020/04/01/git%E4%BD%BF%E7%94%A8/</url>
+    <title>利用git管理github仓库代码</title>
+    <url>/2020/04/01/%E5%88%A9%E7%94%A8git%E7%AE%A1%E7%90%86github%E4%BB%93%E5%BA%93%E4%BB%A3%E7%A0%81/</url>
     <content><![CDATA[<blockquote>
 <p><strong>利用git建立本地仓库管理文章与代码，及上传至github</strong></p>
 <h2 id="1、利用git管理本地仓库并上传github"><a href="#1、利用git管理本地仓库并上传github" class="headerlink" title="1、利用git管理本地仓库并上传github"></a>1、<a href="https://baijiahao.baidu.com/s?id=1619544681032320225&wfr=spider&for=pc" target="_blank" rel="noopener">利用git管理本地仓库并上传github</a></h2><p><strong>&gt; 可选</strong><br>1、<a href="https://www.yiibai.com/git/git_push.html" target="_blank" rel="noopener">git教程(全)</a><br>2、<a href="https://blog.csdn.net/qq_32384249/article/details/73038413?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">git找回本地误删的文件</a></p>
 </blockquote>
 ]]></content>
       <categories>
-        <category>博客</category>
+        <category>github</category>
       </categories>
       <tags>
         <tag>链接</tag>
@@ -540,7 +540,7 @@ sess.run(init)</code></li>
 </blockquote>
 <h3 id="1、在python2-7安装功能包时要用pip2，在python3-5安装功能包时要用pip3！！！！"><a href="#1、在python2-7安装功能包时要用pip2，在python3-5安装功能包时要用pip3！！！！" class="headerlink" title="1、在python2.7安装功能包时要用pip2，在python3.5安装功能包时要用pip3！！！！"></a>1、在python2.7安装功能包时要用pip2，在python3.5安装功能包时要用pip3！！！！</h3><h3 id="2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见tensorflow对应···版本"><a href="#2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见tensorflow对应···版本" class="headerlink" title="2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见tensorflow对应···版本"></a>2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见<a href="https://blog.csdn.net/littlehaes/article/details/100575694" target="_blank" rel="noopener">tensorflow对应···版本</a></h3>]]></content>
       <categories>
-        <category>tensorflow</category>
+        <category>ubuntu</category>
       </categories>
       <tags>
         <tag>链接</tag>
@@ -570,7 +570,7 @@ sess.run(init)</code></li>
 <p><img src="/2020/03/26/%E5%88%A9%E7%94%A8github%E4%B8%8Ehexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E6%97%BA%E8%B4%A2.jpg" alt="测试图片"> </p>
 ]]></content>
       <categories>
-        <category>博客</category>
+        <category>github</category>
       </categories>
       <tags>
         <tag>链接</tag>
