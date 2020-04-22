@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ubuntu解决双系统下windows时间不正常</title>
+    <url>/2020/04/22/ubuntu%E8%A7%A3%E5%86%B3%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%B8%8Bwindows%E6%97%B6%E9%97%B4%E4%B8%8D%E6%AD%A3%E5%B8%B8/</url>
+    <content><![CDATA[<blockquote>
+<p>解决双系统下windows时间不正常问题</p>
+</blockquote>
+<h3 id="1、传送门"><a href="#1、传送门" class="headerlink" title="1、传送门"></a>1、<a href="https://blog.csdn.net/xm1129968693/article/details/55096202" target="_blank" rel="noopener">传送门</a></h3>]]></content>
+      <categories>
+        <category>ubuntu</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>windows直接对ubuntu磁盘格式化导致的引导问题</title>
     <url>/2020/04/21/windows%E5%BC%95%E5%AF%BC%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<blockquote>
@@ -48,14 +62,14 @@ sudo lilo -M /dev/sda mbr</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>ROS安装</title>
-    <url>/2020/04/21/ROS%E5%AE%89%E8%A3%85/</url>
+    <title>ubuntu安装ROS</title>
+    <url>/2020/04/21/ubuntu%E5%AE%89%E8%A3%85ROS/</url>
     <content><![CDATA[<blockquote>
 <p><strong>ubuntu16.04下ROS安装</strong></p>
 </blockquote>
 <h3 id="1、ubuntu换源提高下载速度（可省）"><a href="#1、ubuntu换源提高下载速度（可省）" class="headerlink" title="1、ubuntu换源提高下载速度（可省）"></a>1、ubuntu换源提高下载速度（可省）</h3><h3 id="2、解决课程出现的ubuntu-锁问题（可省）"><a href="#2、解决课程出现的ubuntu-锁问题（可省）" class="headerlink" title="2、解决课程出现的ubuntu 锁问题（可省）"></a>2、解决课程出现的ubuntu 锁问题（可省）</h3><h3 id="3、ROS安装"><a href="#3、ROS安装" class="headerlink" title="3、ROS安装"></a>3、ROS安装</h3>]]></content>
       <categories>
-        <category>ROS</category>
+        <category>ubuntu</category>
       </categories>
       <tags>
         <tag>链接</tag>
@@ -510,14 +524,14 @@ sess.run(init)</code></li>
       </tags>
   </entry>
   <entry>
-    <title>搭建ROS开发环境</title>
-    <url>/2020/03/31/%E6%90%AD%E5%BB%BAROS%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
+    <title>ubuntu搭建ROS开发环境</title>
+    <url>/2020/03/31/ubuntu%E6%90%AD%E5%BB%BAROS%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
     <content><![CDATA[<p><em>本文主要对ros开发环境进行搭建</em></p>
 <h2 id="1、针对于python语言开发ROS搭建pycharm开发环境"><a href="#1、针对于python语言开发ROS搭建pycharm开发环境" class="headerlink" title="1、针对于python语言开发ROS搭建pycharm开发环境"></a>1、<a href="https://www.cnblogs.com/thebreakofdawn/p/9249372.html" target="_blank" rel="noopener">针对于python语言开发ROS搭建pycharm开发环境</a></h2><h2 id="2、针对于C-语言开发ROS搭建roboware开发环境"><a href="#2、针对于C-语言开发ROS搭建roboware开发环境" class="headerlink" title="2、针对于C++语言开发ROS搭建roboware开发环境"></a>2、<a href="https://www.cnblogs.com/rjjhyj/p/11460793.html" target="_blank" rel="noopener">针对于C++语言开发ROS搭建roboware开发环境</a></h2><p><strong><em>测试</em></strong></p>
 <h3 id="1、ROS下创建第一个节点工程"><a href="#1、ROS下创建第一个节点工程" class="headerlink" title="1、ROS下创建第一个节点工程"></a>1、<a href="https://www.cnblogs.com/blue35sky/p/6078771.html" target="_blank" rel="noopener">ROS下创建第一个节点工程</a></h3><p><strong><em>安装roboware</em></strong></p>
 <h3 id="1、roboware的github地址"><a href="#1、roboware的github地址" class="headerlink" title="1、roboware的github地址"></a>1、<a href="https://github.com/tonyrobotics/RoboWare/tree/master/Studio" target="_blank" rel="noopener">roboware的github地址</a></h3>]]></content>
       <categories>
-        <category>ROS</category>
+        <category>ubuntu</category>
       </categories>
       <tags>
         <tag>链接</tag>
@@ -547,8 +561,8 @@ sess.run(init)</code></li>
       </tags>
   </entry>
   <entry>
-    <title>针对ros安装存在的rosdep_update问题</title>
-    <url>/2020/03/29/%E9%92%88%E5%AF%B9ros%E5%AE%89%E8%A3%85%E5%AD%98%E5%9C%A8%E7%9A%84rosdep-update%E9%97%AE%E9%A2%98/</url>
+    <title>ubuntu安装ros存在的rosdep_update问题</title>
+    <url>/2020/03/29/ubuntu%E5%AE%89%E8%A3%85ros%E5%AD%98%E5%9C%A8%E7%9A%84rosdep_update%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h1 id="对于ROS安装存在的rosdep-update与sudo-rosdep-init问题，解决方案如下"><a href="#对于ROS安装存在的rosdep-update与sudo-rosdep-init问题，解决方案如下" class="headerlink" title="对于ROS安装存在的rosdep-update与sudo rosdep init问题，解决方案如下"></a>对于ROS安装存在的rosdep-update与sudo rosdep init问题，解决方案如下</h1><h2 id="1、rosdep-init失败提示error··不能下载、网站不能访问等。"><a href="#1、rosdep-init失败提示error··不能下载、网站不能访问等。" class="headerlink" title="1、rosdep init失败提示error··不能下载、网站不能访问等。"></a>1、rosdep init失败提示error··不能下载、网站不能访问等。</h2><p>  可直接在浏览器访问终端提示的链接，将其内容复制到sourse-list中的20-······文件（文件名在浏览器中已提示）。之后跳过rosdep init即可。</p>
 <h2 id="2、对于rosdep-uodate问题，以下三种方法亲测有效。"><a href="#2、对于rosdep-uodate问题，以下三种方法亲测有效。" class="headerlink" title="2、对于rosdep uodate问题，以下三种方法亲测有效。"></a>2、对于rosdep uodate问题，以下三种方法亲测有效。</h2><p>（1）推荐首先使用4g热点尝试。<br>（2）若依旧失败，可修改源，在ubuntu的服务器设置中测试最佳服务器，然后更新，最后终端敲写sudo apt-get update。<br>（3）依旧失败，则终端敲写sudo gedit /etc/resolv.conf，将原有的nameserver这一行注释，并添加以下两行：nameserver 8.8.8.8 #google域名服务器、nameserver 8.8.4.4 #google域名服务器。依次敲写 sudo  apt-get update 、rosdep update。</p>
 <hr>
@@ -557,7 +571,7 @@ sess.run(init)</code></li>
 </blockquote>
 ]]></content>
       <categories>
-        <category>ROS</category>
+        <category>ubuntu</category>
       </categories>
       <tags>
         <tag>链接</tag>

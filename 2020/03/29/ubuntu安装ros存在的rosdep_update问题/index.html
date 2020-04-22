@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    ROS安装 |  搬砖工的故事
+    ubuntu安装ros存在的rosdep_update问题 |  搬砖工的故事
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -33,7 +33,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="post-ROS安装" class="article article-type-post" itemscope
+  <article id="post-ubuntu安装ros存在的rosdep_update问题" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -41,7 +41,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  ROS安装
+  ubuntu安装ros存在的rosdep_update问题
 </h1>
  
 
@@ -50,12 +50,12 @@
 
     
     <div class="article-meta">
-      <a href="/2020/04/21/ROS%E5%AE%89%E8%A3%85/" class="article-date">
-  <time datetime="2020-04-21T05:37:44.000Z" itemprop="datePublished">2020-04-21</time>
+      <a href="/2020/03/29/ubuntu%E5%AE%89%E8%A3%85ros%E5%AD%98%E5%9C%A8%E7%9A%84rosdep_update%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2020-03-29T02:06:09.000Z" itemprop="datePublished">2020-03-29</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/ROS/">ROS</a>
+    <a class="article-category-link" href="/categories/ubuntu/">ubuntu</a>
   </div>
 
       
@@ -65,7 +65,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">35字</span>
+            <span class="post-count">251字</span>
         </span>
     </span>
 
@@ -99,10 +99,13 @@
       
 
       
-      <blockquote>
-<p><strong>ubuntu16.04下ROS安装</strong></p>
+      <h1 id="对于ROS安装存在的rosdep-update与sudo-rosdep-init问题，解决方案如下"><a href="#对于ROS安装存在的rosdep-update与sudo-rosdep-init问题，解决方案如下" class="headerlink" title="对于ROS安装存在的rosdep-update与sudo rosdep init问题，解决方案如下"></a>对于ROS安装存在的rosdep-update与sudo rosdep init问题，解决方案如下</h1><h2 id="1、rosdep-init失败提示error··不能下载、网站不能访问等。"><a href="#1、rosdep-init失败提示error··不能下载、网站不能访问等。" class="headerlink" title="1、rosdep init失败提示error··不能下载、网站不能访问等。"></a>1、rosdep init失败提示error··不能下载、网站不能访问等。</h2><p>  可直接在浏览器访问终端提示的链接，将其内容复制到sourse-list中的20-······文件（文件名在浏览器中已提示）。之后跳过rosdep init即可。</p>
+<h2 id="2、对于rosdep-uodate问题，以下三种方法亲测有效。"><a href="#2、对于rosdep-uodate问题，以下三种方法亲测有效。" class="headerlink" title="2、对于rosdep uodate问题，以下三种方法亲测有效。"></a>2、对于rosdep uodate问题，以下三种方法亲测有效。</h2><p>（1）推荐首先使用4g热点尝试。<br>（2）若依旧失败，可修改源，在ubuntu的服务器设置中测试最佳服务器，然后更新，最后终端敲写sudo apt-get update。<br>（3）依旧失败，则终端敲写sudo gedit /etc/resolv.conf，将原有的nameserver这一行注释，并添加以下两行：nameserver 8.8.8.8 #google域名服务器、nameserver 8.8.4.4 #google域名服务器。依次敲写 sudo  apt-get update 、rosdep update。</p>
+<hr>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote>
+<p>1、<a href="https://blog.csdn.net/mrh1714348719/article/details/103803110?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">ubuntu安装ROS进行到rosdep update时出现错误，如ERROR: unable to process source …</a><br>2、<a href="https://blog.csdn.net/pj18862486309/article/details/100531506?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">rosdep update 一直失败问题</a></p>
 </blockquote>
-<h3 id="1、ubuntu换源提高下载速度（可省）"><a href="#1、ubuntu换源提高下载速度（可省）" class="headerlink" title="1、ubuntu换源提高下载速度（可省）"></a>1、ubuntu换源提高下载速度（可省）</h3><h3 id="2、解决课程出现的ubuntu-锁问题（可省）"><a href="#2、解决课程出现的ubuntu-锁问题（可省）" class="headerlink" title="2、解决课程出现的ubuntu 锁问题（可省）"></a>2、解决课程出现的ubuntu 锁问题（可省）</h3><h3 id="3、ROS安装"><a href="#3、ROS安装" class="headerlink" title="3、ROS安装"></a>3、ROS安装</h3>
+
       
       <!-- reward -->
       
@@ -171,7 +174,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/04/21/ROS%E5%AE%89%E8%A3%85/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/03/29/ubuntu%E5%AE%89%E8%A3%85ros%E5%AD%98%E5%9C%A8%E7%9A%84rosdep_update%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -189,19 +192,19 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/04/21/windows-ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" class="article-nav-link">
+      <a href="/2020/03/31/ubuntu%E4%B8%A4%E4%B8%AApython%E5%90%8C%E6%97%B6%E5%AE%89%E8%A3%85tensorflow/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            windows+ubuntu双系统安装
+            ubuntu两个python分别同时安装tensorflow
           
         </div>
       </a>
     
     
-      <a href="/2020/04/05/%E5%88%9D%E5%AD%A6tensorflow-%E8%87%AA%E7%BC%96%E7%A0%81/" class="article-nav-link">
+      <a href="/2020/03/26/%E5%88%A9%E7%94%A8github%E4%B8%8Ehexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">初学tensorflow-自编码</div>
+        <div class="article-nav-title">利用github与hexo搭建个人博客</div>
       </a>
     
   </nav>
