@@ -1,12 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ubuntu安装n卡驱动</title>
+    <url>/2020/04/22/ubuntu%E5%AE%89%E8%A3%85n%E5%8D%A1%E9%A9%B1%E5%8A%A8/</url>
+    <content><![CDATA[<blockquote>
+<p>注意：需要把系统更新打开。</p>
+</blockquote>
+<h3 id="1、ubuntu安装n卡驱动"><a href="#1、ubuntu安装n卡驱动" class="headerlink" title="1、ubuntu安装n卡驱动"></a>1、ubuntu安装n卡驱动</h3><p> 直接在ubuntu仓库-附加驱动更改即可。</p>
+]]></content>
+      <categories>
+        <category>ubuntu</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ubuntu修改grub等待时间</title>
+    <url>/2020/04/22/ubuntu%E4%BF%AE%E6%94%B9grub%E7%AD%89%E5%BE%85%E6%97%B6%E9%97%B4/</url>
+    <content><![CDATA[<h3 id="1、ubuntu修改grub等待时间"><a href="#1、ubuntu修改grub等待时间" class="headerlink" title="1、ubuntu修改grub等待时间"></a>1、ubuntu修改grub等待时间</h3><p><a href="https://www.jianshu.com/p/5474500f4b06" target="_blank" rel="noopener">传送门</a></p>
+]]></content>
+      <categories>
+        <category>ubuntu</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ubuntu安装搜狗输入法</title>
+    <url>/2020/04/22/ubuntu%E5%AE%89%E8%A3%85%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95/</url>
+    <content><![CDATA[<h3 id="1、ubuntu安装搜狗输入法"><a href="#1、ubuntu安装搜狗输入法" class="headerlink" title="1、ubuntu安装搜狗输入法"></a>1、ubuntu安装搜狗输入法</h3><p><a href="https://blog.csdn.net/leijiezhang/article/details/53707181" target="_blank" rel="noopener">传送门</a></p>
+]]></content>
+      <categories>
+        <category>ubuntu</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ubuntu解决双系统下windows时间不正常</title>
     <url>/2020/04/22/ubuntu%E8%A7%A3%E5%86%B3%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%B8%8Bwindows%E6%97%B6%E9%97%B4%E4%B8%8D%E6%AD%A3%E5%B8%B8/</url>
-    <content><![CDATA[<blockquote>
-<p>解决双系统下windows时间不正常问题</p>
-</blockquote>
-<h3 id="1、传送门"><a href="#1、传送门" class="headerlink" title="1、传送门"></a>1、<a href="https://blog.csdn.net/xm1129968693/article/details/55096202" target="_blank" rel="noopener">传送门</a></h3>]]></content>
+    <content><![CDATA[<h3 id="1、解决双系统下windows时间不正常问题"><a href="#1、解决双系统下windows时间不正常问题" class="headerlink" title="1、解决双系统下windows时间不正常问题"></a>1、解决双系统下windows时间不正常问题</h3><p><a href="https://blog.csdn.net/xm1129968693/article/details/55096202" target="_blank" rel="noopener">传送门</a></p>
+]]></content>
       <categories>
         <category>ubuntu</category>
       </categories>
@@ -33,25 +70,15 @@ sudo lilo -M /dev/sda mbr</code></pre>]]></content>
   <entry>
     <title>windows+ubuntu双系统安装</title>
     <url>/2020/04/21/windows-ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<blockquote>
-<ol>
-<li><strong>windows版本：win8.1</strong></li>
-<li><strong>笔记本型号：戴尔灵越</strong></li>
-</ol>
-</blockquote>
-<hr>
-<h3 id="1、整体流程"><a href="#1、整体流程" class="headerlink" title="1、整体流程"></a>1、<a href="https://blog.csdn.net/stu_shanghui/article/details/101865463" target="_blank" rel="noopener">整体流程</a></h3><h3 id="2、对1所配置ubuntu系统空间调整如下"><a href="#2、对1所配置ubuntu系统空间调整如下" class="headerlink" title="2、对1所配置ubuntu系统空间调整如下"></a>2、对1所配置ubuntu系统空间调整如下</h3><ol>
+    <content><![CDATA[<h3 id="1、整体流程"><a href="#1、整体流程" class="headerlink" title="1、整体流程"></a>1、<a href="https://blog.csdn.net/stu_shanghui/article/details/101865463" target="_blank" rel="noopener">整体流程</a></h3><h3 id="2、对1所配置ubuntu系统空间调整如下"><a href="#2、对1所配置ubuntu系统空间调整如下" class="headerlink" title="2、对1所配置ubuntu系统空间调整如下"></a>2、对1所配置ubuntu系统空间调整如下</h3><ol>
 <li>swap：4G</li>
 <li>boot：800mb</li>
 <li>/:25G</li>
 <li>/home：剩余所有空间</li>
 </ol>
-<hr>
 <blockquote>
-<ol>
-<li><strong>注意：对于本人，无法使用快速u盘启动安装ubuntu系统，需要配置u盘为第一启动项后安装。</strong></li>
-<li><strong>对于注意的解释：快速u盘启动安装的是uefi类型，而u盘第一启动项是efi类型，根据个人本子情况随时调节。</strong></li>
-</ol>
+<p>注意：对于本人，无法使用快速u盘启动安装ubuntu系统，需要配置u盘为第一启动项后安装。</p>
+<p>对于注意的解释：快速u盘启动安装的是uefi类型，而u盘第一启动项是efi类型，可根据个人情况随时调节。</p>
 </blockquote>
 ]]></content>
       <categories>
@@ -67,7 +94,10 @@ sudo lilo -M /dev/sda mbr</code></pre>]]></content>
     <content><![CDATA[<blockquote>
 <p><strong>ubuntu16.04下ROS安装</strong></p>
 </blockquote>
-<h3 id="1、ubuntu换源提高下载速度（可省）"><a href="#1、ubuntu换源提高下载速度（可省）" class="headerlink" title="1、ubuntu换源提高下载速度（可省）"></a>1、ubuntu换源提高下载速度（可省）</h3><h3 id="2、解决课程出现的ubuntu-锁问题（可省）"><a href="#2、解决课程出现的ubuntu-锁问题（可省）" class="headerlink" title="2、解决课程出现的ubuntu 锁问题（可省）"></a>2、解决课程出现的ubuntu 锁问题（可省）</h3><h3 id="3、ROS安装"><a href="#3、ROS安装" class="headerlink" title="3、ROS安装"></a>3、ROS安装</h3>]]></content>
+<h3 id="1、ubuntu换源提高下载速度（可省）"><a href="#1、ubuntu换源提高下载速度（可省）" class="headerlink" title="1、ubuntu换源提高下载速度（可省）"></a>1、ubuntu换源提高下载速度（可省）</h3><p><a href="https://blog.csdn.net/u012308586/article/details/102953882" target="_blank" rel="noopener">传送门</a></p>
+<h3 id="2、解决课程出现的ubuntu-锁问题（可省）"><a href="#2、解决课程出现的ubuntu-锁问题（可省）" class="headerlink" title="2、解决课程出现的ubuntu 锁问题（可省）"></a>2、解决课程出现的ubuntu 锁问题（可省）</h3><p><a href="https://blog.csdn.net/m0_37442062/article/details/95446785" target="_blank" rel="noopener">传送门</a></p>
+<h3 id="3、ROS安装"><a href="#3、ROS安装" class="headerlink" title="3、ROS安装"></a>3、ROS安装</h3><p><a href="https://www.ncnynl.com/archives/201801/2273.html" target="_blank" rel="noopener">传送门</a></p>
+]]></content>
       <categories>
         <category>ubuntu</category>
       </categories>
