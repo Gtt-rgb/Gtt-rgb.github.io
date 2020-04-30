@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>windows本地服务占用大量CPU</title>
+    <url>/2020/04/22/windows%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%8D%A0%E7%94%A8%E5%A4%A7%E9%87%8FCPU/</url>
+    <content><![CDATA[<h3 id="1、退出家庭组"><a href="#1、退出家庭组" class="headerlink" title="1、退出家庭组"></a>1、退出家庭组</h3><p><a href="https://answers.microsoft.com/zh-hans/windows/forum/windows_8-networking/%E5%8A%A0%E5%85%A5%E5%AE%B6%E5%BA%AD%E7%BB%84/e5288033-50fb-45c5-812d-c3bb3ce4e35d" target="_blank" rel="noopener">传送门</a></p>
+]]></content>
+      <categories>
+        <category>windows</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ubuntu系统boot分区不够用解决办法</title>
+    <url>/2020/04/22/ubuntu%E7%B3%BB%E7%BB%9Fboot%E5%88%86%E5%8C%BA%E4%B8%8D%E5%A4%9F%E7%94%A8%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<p>1、释放boot分区内无用空间<br><a href="http://blog.sina.com.cn/s/blog_44c488680101hwk0.html" target="_blank" rel="noopener">传送门</a></p>
+]]></content>
+      <categories>
+        <category>ubuntu</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ubuntu安装n卡驱动</title>
     <url>/2020/04/22/ubuntu%E5%AE%89%E8%A3%85n%E5%8D%A1%E9%A9%B1%E5%8A%A8/</url>
     <content><![CDATA[<blockquote>
@@ -76,13 +100,14 @@ sudo lilo -M /dev/sda mbr</code></pre>]]></content>
 <li>/:25G</li>
 <li>/home：剩余所有空间</li>
 </ol>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>1、<a href="https://zhuanlan.zhihu.com/p/91643438" target="_blank" rel="noopener">双系统安装盲区只是</a></p>
 <blockquote>
 <p>注意：对于本人，无法使用快速u盘启动安装ubuntu系统，需要配置u盘为第一启动项后安装。</p>
 <p>对于注意的解释：快速u盘启动安装的是uefi类型，而u盘第一启动项是efi类型，可根据个人情况随时调节。</p>
 </blockquote>
 ]]></content>
       <categories>
-        <category>ubuntu</category>
+        <category>windows</category>
       </categories>
       <tags>
         <tag>链接</tag>
@@ -97,6 +122,7 @@ sudo lilo -M /dev/sda mbr</code></pre>]]></content>
 <h3 id="1、ubuntu换源提高下载速度（可省）"><a href="#1、ubuntu换源提高下载速度（可省）" class="headerlink" title="1、ubuntu换源提高下载速度（可省）"></a>1、ubuntu换源提高下载速度（可省）</h3><p><a href="https://blog.csdn.net/u012308586/article/details/102953882" target="_blank" rel="noopener">传送门</a></p>
 <h3 id="2、解决课程出现的ubuntu-锁问题（可省）"><a href="#2、解决课程出现的ubuntu-锁问题（可省）" class="headerlink" title="2、解决课程出现的ubuntu 锁问题（可省）"></a>2、解决课程出现的ubuntu 锁问题（可省）</h3><p><a href="https://blog.csdn.net/m0_37442062/article/details/95446785" target="_blank" rel="noopener">传送门</a></p>
 <h3 id="3、ROS安装"><a href="#3、ROS安装" class="headerlink" title="3、ROS安装"></a>3、ROS安装</h3><p><a href="https://www.ncnynl.com/archives/201801/2273.html" target="_blank" rel="noopener">传送门</a></p>
+<h3 id="4、ROS安装时存在的rosdep-init与rosdep-update问题（可省）"><a href="#4、ROS安装时存在的rosdep-init与rosdep-update问题（可省）" class="headerlink" title="4、ROS安装时存在的rosdep init与rosdep update问题（可省）"></a>4、ROS安装时存在的rosdep init与rosdep update问题（可省）</h3><p><a href="https://gtt-rgb.github.io/2020/03/29/ubuntu%E5%AE%89%E8%A3%85ros%E5%AD%98%E5%9C%A8%E7%9A%84rosdep_update%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener">传送门、本人之前博文</a></p>
 ]]></content>
       <categories>
         <category>ubuntu</category>
@@ -593,8 +619,11 @@ sess.run(init)</code></li>
   <entry>
     <title>ubuntu安装ros存在的rosdep_update问题</title>
     <url>/2020/03/29/ubuntu%E5%AE%89%E8%A3%85ros%E5%AD%98%E5%9C%A8%E7%9A%84rosdep_update%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="对于ROS安装存在的rosdep-update与sudo-rosdep-init问题，解决方案如下"><a href="#对于ROS安装存在的rosdep-update与sudo-rosdep-init问题，解决方案如下" class="headerlink" title="对于ROS安装存在的rosdep-update与sudo rosdep init问题，解决方案如下"></a>对于ROS安装存在的rosdep-update与sudo rosdep init问题，解决方案如下</h1><h2 id="1、rosdep-init失败提示error··不能下载、网站不能访问等。"><a href="#1、rosdep-init失败提示error··不能下载、网站不能访问等。" class="headerlink" title="1、rosdep init失败提示error··不能下载、网站不能访问等。"></a>1、rosdep init失败提示error··不能下载、网站不能访问等。</h2><p>  可直接在浏览器访问终端提示的链接，将其内容复制到sourse-list中的20-······文件（文件名在浏览器中已提示）。之后跳过rosdep init即可。</p>
-<h2 id="2、对于rosdep-uodate问题，以下三种方法亲测有效。"><a href="#2、对于rosdep-uodate问题，以下三种方法亲测有效。" class="headerlink" title="2、对于rosdep uodate问题，以下三种方法亲测有效。"></a>2、对于rosdep uodate问题，以下三种方法亲测有效。</h2><p>（1）推荐首先使用4g热点尝试。<br>（2）若依旧失败，可修改源，在ubuntu的服务器设置中测试最佳服务器，然后更新，最后终端敲写sudo apt-get update。<br>（3）依旧失败，则终端敲写sudo gedit /etc/resolv.conf，将原有的nameserver这一行注释，并添加以下两行：nameserver 8.8.8.8 #google域名服务器、nameserver 8.8.4.4 #google域名服务器。依次敲写 sudo  apt-get update 、rosdep update。</p>
+    <content><![CDATA[<blockquote>
+<p> 对于ROS安装存在的rosdep-update与sudo rosdep init问题，解决方案如下</p>
+</blockquote>
+<h3 id="1、rosdep-init失败提示error··不能下载、网站不能访问等。"><a href="#1、rosdep-init失败提示error··不能下载、网站不能访问等。" class="headerlink" title="1、rosdep init失败提示error··不能下载、网站不能访问等。"></a>1、rosdep init失败提示error··不能下载、网站不能访问等。</h3><p>  可直接在浏览器访问终端提示的链接，将其内容复制到sourse-list中的20-······文件（文件名在浏览器中已提示）。之后跳过rosdep init即可。</p>
+<h3 id="2、对于rosdep-update问题，以下三种方法亲测有效。"><a href="#2、对于rosdep-update问题，以下三种方法亲测有效。" class="headerlink" title="2、对于rosdep update问题，以下三种方法亲测有效。"></a>2、对于rosdep update问题，以下三种方法亲测有效。</h3><p>（1）推荐首先使用4g热点尝试。<br>（2）若依旧失败，可修改源，在ubuntu的服务器设置中测试最佳服务器，然后更新，最后终端敲写sudo apt-get update。<br>（3）依旧失败，则终端敲写sudo gedit /etc/resolv.conf，将原有的nameserver这一行注释，并添加以下两行：nameserver 8.8.8.8 #google域名服务器、nameserver 8.8.4.4 #google域名服务器。依次敲写 sudo  apt-get update 、rosdep update。</p>
 <hr>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote>
 <p>1、<a href="https://blog.csdn.net/mrh1714348719/article/details/103803110?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">ubuntu安装ROS进行到rosdep update时出现错误，如ERROR: unable to process source …</a><br>2、<a href="https://blog.csdn.net/pj18862486309/article/details/100531506?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">rosdep update 一直失败问题</a></p>
