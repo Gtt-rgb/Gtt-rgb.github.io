@@ -65,7 +65,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">251字</span>
+            <span class="post-count">323字</span>
         </span>
     </span>
 
@@ -102,8 +102,8 @@
       <blockquote>
 <p> 对于ROS安装存在的rosdep-update与sudo rosdep init问题，解决方案如下</p>
 </blockquote>
-<h3 id="1、rosdep-init失败提示error··不能下载、网站不能访问等。"><a href="#1、rosdep-init失败提示error··不能下载、网站不能访问等。" class="headerlink" title="1、rosdep init失败提示error··不能下载、网站不能访问等。"></a>1、rosdep init失败提示error··不能下载、网站不能访问等。</h3><p>  可直接在浏览器访问终端提示的链接，将其内容复制到sourse-list中的20-······文件（文件名在浏览器中已提示）。之后跳过rosdep init即可。</p>
-<h3 id="2、对于rosdep-update问题，以下三种方法亲测有效。"><a href="#2、对于rosdep-update问题，以下三种方法亲测有效。" class="headerlink" title="2、对于rosdep update问题，以下三种方法亲测有效。"></a>2、对于rosdep update问题，以下三种方法亲测有效。</h3><p>（1）推荐首先使用4g热点尝试。<br>（2）若依旧失败，可修改源，在ubuntu的服务器设置中测试最佳服务器，然后更新，最后终端敲写sudo apt-get update。<br>（3）依旧失败，则终端敲写sudo gedit /etc/resolv.conf，将原有的nameserver这一行注释，并添加以下两行：nameserver 8.8.8.8 #google域名服务器、nameserver 8.8.4.4 #google域名服务器。依次敲写 sudo  apt-get update 、rosdep update。</p>
+<h3 id="1、rosdep-init失败提示error··不能下载、网站不能访问等。"><a href="#1、rosdep-init失败提示error··不能下载、网站不能访问等。" class="headerlink" title="1、rosdep init失败提示error··不能下载、网站不能访问等。"></a>1、rosdep init失败提示error··不能下载、网站不能访问等。</h3><p>（1）可直接在浏览器访问终端提示的链接，将其内容复制到sourse-list中的20-······文件（文件名在浏览器中已提示）。之后跳过rosdep init即可。<br>（2）若在浏览器依旧不能访问链接，可在/etc下修改hosts文件，在末尾处增加151.101.84.133 raw.githubusercontent.com即可。</p>
+<h3 id="2、对于rosdep-update问题，以下三种方法亲测有效。"><a href="#2、对于rosdep-update问题，以下三种方法亲测有效。" class="headerlink" title="2、对于rosdep update问题，以下三种方法亲测有效。"></a>2、对于rosdep update问题，以下三种方法亲测有效。</h3><p>（1）推荐首先使用4g热点尝试。<br>（2）若依旧失败，可修改源，在ubuntu的服务器设置中测试最佳服务器，然后更新，最后终端敲写sudo apt-get update。<br>（3）依旧失败，则终端敲写sudo gedit /etc/resolv.conf，将原有的nameserver这一行注释，并添加以下两行：nameserver 8.8.8.8 #google域名服务器、nameserver 8.8.4.4 #google域名服务器。依次敲写 sudo  apt-get update 、rosdep update。<br>（4）若依旧失败，可在/etc下修改hosts文件，在末尾处增加151.101.84.133 raw.githubusercontent.com，然后在敲写rosdep update。</p>
 <hr>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote>
 <p>1、<a href="https://blog.csdn.net/mrh1714348719/article/details/103803110?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">ubuntu安装ROS进行到rosdep update时出现错误，如ERROR: unable to process source …</a><br>2、<a href="https://blog.csdn.net/pj18862486309/article/details/100531506?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">rosdep update 一直失败问题</a></p>
