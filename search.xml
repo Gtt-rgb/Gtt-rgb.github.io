@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>windows无法格式化u盘</title>
+    <url>/2020/06/02/windows%E6%97%A0%E6%B3%95%E6%A0%BC%E5%BC%8F%E5%8C%96u%E7%9B%98/</url>
+    <content><![CDATA[<blockquote>
+<p>问题：右键格式化优盘按钮灰色。</p>
+</blockquote>
+<h3 id="1、进入磁盘管理界面，找到所选U盘进行格式化。无视提示消息。"><a href="#1、进入磁盘管理界面，找到所选U盘进行格式化。无视提示消息。" class="headerlink" title="1、进入磁盘管理界面，找到所选U盘进行格式化。无视提示消息。"></a>1、进入磁盘管理界面，找到所选U盘进行格式化。无视提示消息。</h3><h3 id="2、右键快速格式化u盘即可。"><a href="#2、右键快速格式化u盘即可。" class="headerlink" title="2、右键快速格式化u盘即可。"></a>2、右键快速格式化u盘即可。</h3>]]></content>
+      <categories>
+        <category>windows</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python学习</title>
+    <url>/2020/05/04/python%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>1、<a href="https://www.bilibili.com/video/BV16E411G7sd?from=search&seid=13237862902535014303" target="_blank" rel="noopener">B站pandas教程</a><br>2、<a href="https://www.cnblogs.com/ifantastic/p/3811145.html" target="_blank" rel="noopener">python的列表复制</a><br>3、<a href="https://www.bilibili.com/video/BV1jW411Y7dL" target="_blank" rel="noopener">B站tkinter教程</a></p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>windows本地服务占用大量CPU</title>
     <url>/2020/04/22/windows%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%8D%A0%E7%94%A8%E5%A4%A7%E9%87%8FCPU/</url>
     <content><![CDATA[<h3 id="1、退出家庭组"><a href="#1、退出家庭组" class="headerlink" title="1、退出家庭组"></a>1、退出家庭组</h3><p><a href="https://answers.microsoft.com/zh-hans/windows/forum/windows_8-networking/%E5%8A%A0%E5%85%A5%E5%AE%B6%E5%BA%AD%E7%BB%84/e5288033-50fb-45c5-812d-c3bb3ce4e35d" target="_blank" rel="noopener">传送门</a></p>
