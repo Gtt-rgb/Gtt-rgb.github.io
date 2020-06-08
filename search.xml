@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ROS操作系统下roch机器人的使用说明</title>
+    <url>/2020/06/08/ROS%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8Broch%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>ROS安装雷达驱动报错</title>
+    <url>/2020/06/08/ROS%E5%AE%89%E8%A3%85%E9%9B%B7%E8%BE%BE%E9%A9%B1%E5%8A%A8%E6%8A%A5%E9%94%99/</url>
+    <content><![CDATA[<h3 id="1、报错原因：串口问题，解决方案如下"><a href="#1、报错原因：串口问题，解决方案如下" class="headerlink" title="1、报错原因：串口问题，解决方案如下"></a>1、报错原因：串口问题，解决方案如下</h3><p><a href="https://blog.csdn.net/weixin_37944830/article/details/84640919" target="_blank" rel="noopener">传送门</a></p>
+]]></content>
+      <categories>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>对ubuntu中hosts文件的解释说明</title>
+    <url>/2020/06/08/ubuntu%E4%B8%ADhosts%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%A3%E9%87%8A%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<h3 id="1、说明解释ubuntu-etc-hosts文件"><a href="#1、说明解释ubuntu-etc-hosts文件" class="headerlink" title="1、说明解释ubuntu/etc/hosts文件"></a>1、说明解释ubuntu/etc/hosts文件</h3><p><a href="https://blog.csdn.net/Zhiming_Xu/article/details/84582389" target="_blank" rel="noopener">传送门</a></p>
+]]></content>
+      <categories>
+        <category>ubuntu</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>利用hexo写博客提交GitHub流程</title>
+    <url>/2020/06/08/%E5%88%A9%E7%94%A8hexo%E5%86%99%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4GitHub%E6%B5%81%E7%A8%8B/</url>
+    <content><![CDATA[<h3 id="1、命令hexo-new-“名字”"><a href="#1、命令hexo-new-“名字”" class="headerlink" title="1、命令hexo new “名字”"></a>1、命令hexo new “名字”</h3><p>建立markdown文件</p>
+<h3 id="2、命令hexo-s"><a href="#2、命令hexo-s" class="headerlink" title="2、命令hexo s"></a>2、命令hexo s</h3><p>启动本地服务器，可浏览器输入localhost：4000提前监测发布到github上的内容信息。</p>
+<h3 id="3、命令hexo-g"><a href="#3、命令hexo-g" class="headerlink" title="3、命令hexo g"></a>3、命令hexo g</h3><p>产生静态网页</p>
+<h3 id="4、命令hexo-d"><a href="#4、命令hexo-d" class="headerlink" title="4、命令hexo d"></a>4、命令hexo d</h3><p>提交到github上</p>
+]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows安装虚拟机</title>
+    <url>/2020/06/08/Windows%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA/</url>
+    <content><![CDATA[<h3 id="1、VMware虚拟机安装"><a href="#1、VMware虚拟机安装" class="headerlink" title="1、VMware虚拟机安装"></a>1、VMware虚拟机安装</h3><p><a href="https://blog.csdn.net/weixin_44702525/article/details/100036287" target="_blank" rel="noopener">传送门</a></p>
+<h3 id="2、ubuntu安装"><a href="#2、ubuntu安装" class="headerlink" title="2、ubuntu安装"></a>2、ubuntu安装</h3><p><a href="https://blog.csdn.net/weixin_44702525/article/details/100823528?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">传送门</a></p>
+<blockquote>
+<p>可额外参考本人windows与ubuntu双系统安装教程</p>
+</blockquote>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
+<li>VM中安装系统不能全屏的问题解决方案如下：<br><a href="https://blog.csdn.net/anonymous_me/article/details/79660125" target="_blank" rel="noopener">传送门</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>windows</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>windows无法格式化u盘</title>
     <url>/2020/06/02/windows%E6%97%A0%E6%B3%95%E6%A0%BC%E5%BC%8F%E5%8C%96u%E7%9B%98/</url>
     <content><![CDATA[<blockquote>
@@ -15,8 +78,8 @@
       </tags>
   </entry>
   <entry>
-    <title>python学习</title>
-    <url>/2020/05/04/python%E5%AD%A6%E4%B9%A0/</url>
+    <title>python基础学习一</title>
+    <url>/2020/05/04/python%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%B8%80/</url>
     <content><![CDATA[<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>1、<a href="https://www.bilibili.com/video/BV16E411G7sd?from=search&seid=13237862902535014303" target="_blank" rel="noopener">B站pandas教程</a><br>2、<a href="https://www.cnblogs.com/ifantastic/p/3811145.html" target="_blank" rel="noopener">python的列表复制</a><br>3、<a href="https://www.bilibili.com/video/BV1jW411Y7dL" target="_blank" rel="noopener">B站tkinter教程</a></p>
 ]]></content>
       <categories>
@@ -120,17 +183,17 @@ sudo lilo -M /dev/sda mbr</code></pre>]]></content>
   <entry>
     <title>windows+ubuntu双系统安装</title>
     <url>/2020/04/21/windows-ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h3 id="1、整体流程"><a href="#1、整体流程" class="headerlink" title="1、整体流程"></a>1、<a href="https://blog.csdn.net/stu_shanghui/article/details/101865463" target="_blank" rel="noopener">整体流程</a></h3><h3 id="2、对1所配置ubuntu系统空间调整如下"><a href="#2、对1所配置ubuntu系统空间调整如下" class="headerlink" title="2、对1所配置ubuntu系统空间调整如下"></a>2、对1所配置ubuntu系统空间调整如下</h3><ol>
+    <content><![CDATA[<h3 id="1、整体流程"><a href="#1、整体流程" class="headerlink" title="1、整体流程"></a>1、整体流程</h3><p><a href="https://blog.csdn.net/stu_shanghui/article/details/101865463" target="_blank" rel="noopener">传送门</a></p>
+<h3 id="2、对1所配置ubuntu系统空间调整如下"><a href="#2、对1所配置ubuntu系统空间调整如下" class="headerlink" title="2、对1所配置ubuntu系统空间调整如下"></a>2、对1所配置ubuntu系统空间调整如下</h3><ol>
 <li>swap：4G</li>
 <li>boot：800mb</li>
 <li>/:25G</li>
 <li>/home：剩余所有空间</li>
 </ol>
-<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>1、<a href="https://zhuanlan.zhihu.com/p/91643438" target="_blank" rel="noopener">双系统安装盲区只是</a></p>
-<blockquote>
-<p>注意：对于本人，无法使用快速u盘启动安装ubuntu系统，需要配置u盘为第一启动项后安装。</p>
-<p>对于注意的解释：快速u盘启动安装的是uefi类型，而u盘第一启动项是efi类型，可根据个人情况随时调节。</p>
-</blockquote>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
+<li>对于本人，无法使用快速u盘启动安装ubuntu系统，需要配置u盘为第一启动项后安装。理由是：快速u盘启动安装的是uefi类型，而u盘第一启动项是efi类型。</li>
+</ol>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>1、<a href="https://zhuanlan.zhihu.com/p/91643438" target="_blank" rel="noopener">双系统安装盲区提醒</a></p>
 ]]></content>
       <categories>
         <category>windows</category>

@@ -72,6 +72,444 @@
     
     
     
+    <article id="post-初学tensorflow-tensorboard使用" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/02/%E5%88%9D%E5%AD%A6tensorflow-tensorboard%E4%BD%BF%E7%94%A8/"
+    >初学tensorflow-tensorboard使用</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/02/%E5%88%9D%E5%AD%A6tensorflow-tensorboard%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time datetime="2020-04-02T02:37:30.000Z" itemprop="datePublished">2020-04-02</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tensorflow/">tensorflow</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <blockquote>
+<p><strong>在线性回归基础上，利用tensorboard进行可视化。</strong></p>
+</blockquote>
+<h3 id="1、显示网络框架"><a href="#1、显示网络框架" class="headerlink" title="1、显示网络框架"></a>1、显示网络框架</h3><pre><code>with tf.name_scope(&apos;inputs&apos;):
+   xs = tf.placeholder(tf.float32, [None, 1], name=&apos;x_input&apos;)
+   ys = tf.placeholder(tf.float32, [None, 1], name=&apos;y_input&apos;)</code></pre><ul>
+<li>例子如上：可视化1线性回归的输入层。通过<code>with tf.name_scope(xxx):</code>命令可以可视化网络的任意结构。</li>
+</ul>
+<hr>
+<h3 id="2、显示权重、偏置数据"><a href="#2、显示权重、偏置数据" class="headerlink" title="2、显示权重、偏置数据"></a>2、显示权重、偏置数据</h3><pre><code>Weights = tf.Variable(tf.random_normal([in_size, out_size]), name=&apos;W&apos;)
+tf.summary.histogram(layer_name + &apos;/weights&apos;, Weights)</code></pre><ul>
+<li>例子如上：可视化权重数据。通过<code>tf.summary.histogram（xxx，xxx）</code>可视化数据信息。</li>
+</ul>
+<hr>
+<h3 id="3、显示损失数据"><a href="#3、显示损失数据" class="headerlink" title="3、显示损失数据"></a>3、显示损失数据</h3><pre><code>loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys - prediction),
+                                        reduction_indices=[1]))
+tf.summary.scalar(&apos;loss&apos;, loss)</code></pre><ul>
+<li>例子如上：可视化损失数据。通过<code>tf.summary.scalar(xxx, loss)</code>可视化损失信息。</li>
+</ul>
+<hr>
+<h3 id="4、（1，2，3）步需要以下命令相配合"><a href="#4、（1，2，3）步需要以下命令相配合" class="headerlink" title="4、（1，2，3）步需要以下命令相配合"></a>4、（1，2，3）步需要以下命令相配合</h3><pre><code>sess = tf.Session()
+writer = tf.summary.FileWriter(&quot;logs/&quot;, sess.graph)
+merged = tf.summary.merge_all()</code></pre><ul>
+<li>含义：建立文件，存储融合数据。</li>
+<li>注意：此时没有数据，显示的是网络结构与数据框图。</li>
+</ul>
+<hr>
+<pre><code>result = sess.run(merged,
+                          feed_dict={xs: x_data, ys: y_data})
+writer.add_summary(result, i)</code></pre><ul>
+<li>含义：将数据丢入模型（此处丢入的是merged，不是train！！），得到一批数据，将数据加入到数据融合文件，系统会自动将数据显示在数据框图中。</li>
+</ul>
+<hr>
+<h3 id="5、可视化截图"><a href="#5、可视化截图" class="headerlink" title="5、可视化截图"></a>5、可视化截图</h3><ul>
+<li>tensorboard启动：在存储数据文件目录下，输入<code>tensorboard --logdir==“logs\”</code>，在浏览器输入<code>localhost：6006</code>即可。</li>
+</ul>
+<hr>
+<h2 id><a href="#" class="headerlink" title></a><img src="/2020/04/02/%E5%88%9D%E5%AD%A6tensorflow-tensorboard%E4%BD%BF%E7%94%A8/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84.jpg" alt="1、网络结构"></h2><h2 id="-1"><a href="#-1" class="headerlink" title></a><img src="/2020/04/02/%E5%88%9D%E5%AD%A6tensorflow-tensorboard%E4%BD%BF%E7%94%A8/%E6%9D%83%E9%87%8D%E5%8F%8A%E5%81%8F%E7%BD%AE%E6%95%B0%E6%8D%AE.jpg" alt="2、权重及偏置"></h2><p><img src="/2020/04/02/%E5%88%9D%E5%AD%A6tensorflow-tensorboard%E4%BD%BF%E7%94%A8/%E6%8D%9F%E5%A4%B1.jpg" alt="3、损失"></p>
+<hr>
+<h3 id="6、代码已上传本人github-其主要根据莫烦代码修改而成。"><a href="#6、代码已上传本人github-其主要根据莫烦代码修改而成。" class="headerlink" title="6、代码已上传本人github,其主要根据莫烦代码修改而成。"></a>6、代码已上传<a href="https://github.com/Gtt-rgb/study_tensorflow" target="_blank" rel="noopener">本人github</a>,其主要根据莫烦代码修改而成。</h3><blockquote>
+<p><strong>注意：计算机名需要设置为英文，中文情况下生成的tensorboard文件乱码</strong></p>
+</blockquote>
+<h3 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h3><p>1、<a href="https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/3-4-A-speed-up-learning/" target="_blank" rel="noopener">莫烦tensorflow教程</a></p>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%93%BE%E6%8E%A5/" rel="tag">链接</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
+    <article id="post-利用git管理github仓库代码" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/01/%E5%88%A9%E7%94%A8git%E7%AE%A1%E7%90%86github%E4%BB%93%E5%BA%93%E4%BB%A3%E7%A0%81/"
+    >利用git管理github仓库代码</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/01/%E5%88%A9%E7%94%A8git%E7%AE%A1%E7%90%86github%E4%BB%93%E5%BA%93%E4%BB%A3%E7%A0%81/" class="article-date">
+  <time datetime="2020-04-01T13:54:43.000Z" itemprop="datePublished">2020-04-01</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/github/">github</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <blockquote>
+<p><strong>利用git建立本地仓库管理文章与代码，及上传至github</strong></p>
+<h2 id="1、利用git管理本地仓库并上传github"><a href="#1、利用git管理本地仓库并上传github" class="headerlink" title="1、利用git管理本地仓库并上传github"></a>1、<a href="https://baijiahao.baidu.com/s?id=1619544681032320225&wfr=spider&for=pc" target="_blank" rel="noopener">利用git管理本地仓库并上传github</a></h2><p><strong>&gt; 可选</strong><br>1、<a href="https://www.yiibai.com/git/git_push.html" target="_blank" rel="noopener">git教程(全)</a><br>2、<a href="https://blog.csdn.net/qq_32384249/article/details/73038413?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">git找回本地误删的文件</a></p>
+</blockquote>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%93%BE%E6%8E%A5/" rel="tag">链接</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
+    <article id="post-初学tensorflow-线性回归" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/01/%E5%88%9D%E5%AD%A6tensorflow-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"
+    >初学tensorflow-线性回归</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/01/%E5%88%9D%E5%AD%A6tensorflow-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" class="article-date">
+  <time datetime="2020-04-01T12:37:45.000Z" itemprop="datePublished">2020-04-01</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tensorflow/">tensorflow</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <blockquote>
+<p><strong>通过tensorflow拟合y=a^2-0.5+槽点，以下为代码，分步解析</strong></p>
+</blockquote>
+<h3 id="1、导入功能包"><a href="#1、导入功能包" class="headerlink" title="1、导入功能包"></a>1、导入功能包</h3><pre><code>import tensorflow.compat.v1 as tf
+tf.disable_eager_execution()
+import numpy as np
+import matplotlib.pyplot as plt</code></pre><h3 id="2、设置需要拟合的函数及数据"><a href="#2、设置需要拟合的函数及数据" class="headerlink" title="2、设置需要拟合的函数及数据"></a>2、设置需要拟合的函数及数据</h3><pre><code>x_data = np.linspace(-1, 1, 300, dtype=np.float32)[:, np.newaxis]
+noise = np.random.normal(0, 0.05, x_data.shape).astype(np.float32)
+y_data = np.square(x_data) - 0.5 + noise</code></pre><h3 id="3、设计隐层的权重、偏置等"><a href="#3、设计隐层的权重、偏置等" class="headerlink" title="3、设计隐层的权重、偏置等"></a>3、设计隐层的权重、偏置等</h3><pre><code>def add_layer(inputs, in_size, out_size, activation_function=None):
+    Weights = tf.Variable(tf.random_normal([in_size, out_size]))
+    biases = tf.Variable(tf.zeros([1, out_size]) + 0.1)
+    Wx_plus_b = tf.matmul(inputs, Weights) + biases
+    if activation_function is None:
+        outputs = Wx_plus_b
+    else:
+        outputs = activation_function(Wx_plus_b)
+    return outputs</code></pre><ul>
+<li>偏置不能设置为0，令其加0.1.权重用numpy数组随机初始化，通常比全零效果好。</li>
+<li>input为输入数据，insize为输入维度，outsize为输出维度，activation_function为激活函数。</li>
+<li>tf.variable为tensorflow的变量声明，tf.constant表示常量，tf.add(a,b)表示相加，tf.assign(a,b)表示将b赋值给a，tf.matmul(a,b)表示相乘。<h3 id="4、设计网络的输入层"><a href="#4、设计网络的输入层" class="headerlink" title="4、设计网络的输入层"></a>4、设计网络的输入层</h3>  <code>xs = tf.placeholder(tf.float32, [None, 1])
+   ys = tf.placeholder(tf.float32, [None, 1])</code></li>
+<li>tensorflow通过占位符placeholder来进行数据的输入，[None,1]表示任意行1列的数据，必须包括类型<h3 id="5、设计网络的隐层"><a href="#5、设计网络的隐层" class="headerlink" title="5、设计网络的隐层"></a>5、设计网络的隐层</h3>  <code>l1 = add_layer(xs, 1, 10, activation_function=tf.nn.relu)
+   prediction = add_layer(l1, 10, 1, activation_function=None)</code></li>
+<li>回归一般用relu函数即可。如上，隐层为两层，每层包含10个神经元。<h3 id="6、模型编译"><a href="#6、模型编译" class="headerlink" title="6、模型编译"></a>6、模型编译</h3>  <code>loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys-prediction), reduction_indices=[1]))
+   train_step = tf.train.GradientDescentOptimizer(0.1).minimize(loss)</code></li>
+<li>设计网络的损失函数与优化器，常用的优化器还包括SGD、Adam、Momentum等，优化器能加速网络的训练速度，与学习率相关。<h3 id="7、参数初始化"><a href="#7、参数初始化" class="headerlink" title="7、参数初始化"></a>7、参数初始化</h3><code>sess = tf.Session()
+init = tf.global_variables_initializer()
+sess.run(init)</code></li>
+<li>整个程序内只要包含变量，必须用tf.global——进行初始化。另外，所有的操作都必须通过会话即session.run(xxx)来执行。<h3 id="8、模型训练"><a href="#8、模型训练" class="headerlink" title="8、模型训练"></a>8、模型训练</h3>  for i in range(1000):<pre><code>sess.run(train_step, feed_dict={xs: x_data, ys: y_data})</code></pre></li>
+<li>feeddict包含的是输入数据，将数据输入至train_step中进行训练。<h3 id="9、代码已上传本人github-其主要根据莫烦代码修改而成。"><a href="#9、代码已上传本人github-其主要根据莫烦代码修改而成。" class="headerlink" title="9、代码已上传本人github,其主要根据莫烦代码修改而成。"></a>9、代码已上传<a href="https://github.com/Gtt-rgb/study_tensorflow" target="_blank" rel="noopener">本人github</a>,其主要根据莫烦代码修改而成。</h3></li>
+</ul>
+<h3 id="参考文献：1、莫烦tensorflow教程"><a href="#参考文献：1、莫烦tensorflow教程" class="headerlink" title="参考文献：1、莫烦tensorflow教程"></a>参考文献：1、<a href="https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/3-4-A-speed-up-learning/" target="_blank" rel="noopener">莫烦tensorflow教程</a></h3>
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%93%BE%E6%8E%A5/" rel="tag">链接</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
+    <article id="post-ubuntu搭建ROS开发环境" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/03/31/ubuntu%E6%90%AD%E5%BB%BAROS%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"
+    >ubuntu搭建ROS开发环境</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/03/31/ubuntu%E6%90%AD%E5%BB%BAROS%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" class="article-date">
+  <time datetime="2020-03-31T01:56:20.000Z" itemprop="datePublished">2020-03-31</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ubuntu/">ubuntu</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <p><em>本文主要对ros开发环境进行搭建</em></p>
+<h2 id="1、针对于python语言开发ROS搭建pycharm开发环境"><a href="#1、针对于python语言开发ROS搭建pycharm开发环境" class="headerlink" title="1、针对于python语言开发ROS搭建pycharm开发环境"></a>1、<a href="https://www.cnblogs.com/thebreakofdawn/p/9249372.html" target="_blank" rel="noopener">针对于python语言开发ROS搭建pycharm开发环境</a></h2><h2 id="2、针对于C-语言开发ROS搭建roboware开发环境"><a href="#2、针对于C-语言开发ROS搭建roboware开发环境" class="headerlink" title="2、针对于C++语言开发ROS搭建roboware开发环境"></a>2、<a href="https://www.cnblogs.com/rjjhyj/p/11460793.html" target="_blank" rel="noopener">针对于C++语言开发ROS搭建roboware开发环境</a></h2><p><strong><em>测试</em></strong></p>
+<h3 id="1、ROS下创建第一个节点工程"><a href="#1、ROS下创建第一个节点工程" class="headerlink" title="1、ROS下创建第一个节点工程"></a>1、<a href="https://www.cnblogs.com/blue35sky/p/6078771.html" target="_blank" rel="noopener">ROS下创建第一个节点工程</a></h3><p><strong><em>安装roboware</em></strong></p>
+<h3 id="1、roboware的github地址"><a href="#1、roboware的github地址" class="headerlink" title="1、roboware的github地址"></a>1、<a href="https://github.com/tonyrobotics/RoboWare/tree/master/Studio" target="_blank" rel="noopener">roboware的github地址</a></h3>
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%93%BE%E6%8E%A5/" rel="tag">链接</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
+    <article id="post-ubuntu两个python同时安装tensorflow" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/03/31/ubuntu%E4%B8%A4%E4%B8%AApython%E5%90%8C%E6%97%B6%E5%AE%89%E8%A3%85tensorflow/"
+    >ubuntu两个python分别同时安装tensorflow</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/03/31/ubuntu%E4%B8%A4%E4%B8%AApython%E5%90%8C%E6%97%B6%E5%AE%89%E8%A3%85tensorflow/" class="article-date">
+  <time datetime="2020-03-31T01:42:13.000Z" itemprop="datePublished">2020-03-31</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ubuntu/">ubuntu</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <blockquote>
+<p><strong>本文主要对ubuntu 16.04系统自带python 2.7、python3.5同时安装tensorflow，及验证是否安装成功</strong></p>
+</blockquote>
+<h2 id="1、两个python安装tensorflow的详细教程"><a href="#1、两个python安装tensorflow的详细教程" class="headerlink" title="1、两个python安装tensorflow的详细教程"></a>1、<a href="https://blog.csdn.net/qq_41833285/article/details/99682549" target="_blank" rel="noopener">两个python安装tensorflow的详细教程</a></h2><h2 id="2、单个python版本tensorflow-gpu的安装"><a href="#2、单个python版本tensorflow-gpu的安装" class="headerlink" title="2、单个python版本tensorflow-gpu的安装"></a>2、<a href="https://blog.csdn.net/sakura__lu/article/details/80622396" target="_blank" rel="noopener">单个python版本tensorflow-gpu的安装</a></h2><h2 id="3、单个python版本tensorflow-gpu的安装2"><a href="#3、单个python版本tensorflow-gpu的安装2" class="headerlink" title="3、单个python版本tensorflow-gpu的安装2"></a>3、<a href="https://blog.csdn.net/macunshi/article/details/84638675" target="_blank" rel="noopener">单个python版本tensorflow-gpu的安装2</a></h2><h2 id="4、测试CUDA是否能用"><a href="#4、测试CUDA是否能用" class="headerlink" title="4、测试CUDA是否能用"></a>4、<a href="https://zhidao.baidu.com/question/1308108448353167699.html" target="_blank" rel="noopener">测试CUDA是否能用</a></h2><h2 id="5、测试tensor-gpu是否可用"><a href="#5、测试tensor-gpu是否可用" class="headerlink" title="5、测试tensor gpu是否可用"></a>5、<a href="https://blog.csdn.net/lidichengfo0412/article/details/102637824" target="_blank" rel="noopener">测试tensor gpu是否可用</a></h2><blockquote>
+<p><strong><strong>安装过程存在的问题</strong></strong></p>
+</blockquote>
+<h3 id="1、运行pip-提示-warning-RequestsDependencyWarning-解决方案"><a href="#1、运行pip-提示-warning-RequestsDependencyWarning-解决方案" class="headerlink" title="1、运行pip 提示(warning, RequestsDependencyWarning)解决方案"></a>1、<a href="https://www.jianshu.com/p/1072e97d5733" target="_blank" rel="noopener">运行pip 提示(warning, RequestsDependencyWarning)解决方案</a></h3><h3 id="2、libcudart-so-8-0-cannot-open-shared-object-file-No-such-file-or-directory-的解决办法"><a href="#2、libcudart-so-8-0-cannot-open-shared-object-file-No-such-file-or-directory-的解决办法" class="headerlink" title="2、libcudart.so.8.0: cannot open shared object file: No such file or directory 的解决办法"></a>2、<a href="https://blog.csdn.net/qq_38451119/article/details/81007904" target="_blank" rel="noopener">libcudart.so.8.0: cannot open shared object file: No such file or directory 的解决办法</a></h3><blockquote>
+<p><strong><strong>可选</strong></strong></p>
+</blockquote>
+<h3 id="1、修改ubuntu两个python优先级"><a href="#1、修改ubuntu两个python优先级" class="headerlink" title="1、修改ubuntu两个python优先级"></a>1、<a href="https://www.cnblogs.com/elitphil/p/11525951.html" target="_blank" rel="noopener">修改ubuntu两个python优先级</a></h3><h3 id="2、ubuntu换源提高下载速度-pip也可设置源"><a href="#2、ubuntu换源提高下载速度-pip也可设置源" class="headerlink" title="2、ubuntu换源提高下载速度(pip也可设置源)"></a>2、<a href="https://blog.csdn.net/u012308586/article/details/102953882" target="_blank" rel="noopener">ubuntu换源提高下载速度(pip也可设置源)</a></h3><blockquote>
+<p><strong><strong>注意</strong></strong></p>
+</blockquote>
+<h3 id="1、在python2-7安装功能包时要用pip2，在python3-5安装功能包时要用pip3！！！！"><a href="#1、在python2-7安装功能包时要用pip2，在python3-5安装功能包时要用pip3！！！！" class="headerlink" title="1、在python2.7安装功能包时要用pip2，在python3.5安装功能包时要用pip3！！！！"></a>1、在python2.7安装功能包时要用pip2，在python3.5安装功能包时要用pip3！！！！</h3><h3 id="2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见tensorflow对应···版本"><a href="#2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见tensorflow对应···版本" class="headerlink" title="2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见tensorflow对应···版本"></a>2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见<a href="https://blog.csdn.net/littlehaes/article/details/100575694" target="_blank" rel="noopener">tensorflow对应···版本</a></h3>
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%93%BE%E6%8E%A5/" rel="tag">链接</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
     <article id="post-ubuntu安装ros存在的rosdep_update问题" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
