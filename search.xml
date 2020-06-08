@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>python学习基础一</title>
+    <url>/2020/06/08/python%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E4%B8%80/</url>
+    <content><![CDATA[<h3 id="参考文献（python列表操作）"><a href="#参考文献（python列表操作）" class="headerlink" title="参考文献（python列表操作）"></a>参考文献（python列表操作）</h3><p>1、<a href="https://www.thinbug.com/q/4918425" target="_blank" rel="noopener">python列表减值</a><br>2、<a href="https://www.cnblogs.com/zhangdingqu/p/9501431.html" target="_blank" rel="noopener">python列表增加元素</a><br>3、<a href="https://www.cnblogs.com/ifantastic/p/3811145.html" target="_blank" rel="noopener">python的列表复制</a></p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ROS操作系统下roch机器人的使用说明</title>
     <url>/2020/06/08/ROS%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8Broch%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h3 id="1、安装双系统或虚拟机"><a href="#1、安装双系统或虚拟机" class="headerlink" title="1、安装双系统或虚拟机"></a>1、安装双系统或虚拟机</h3><p>1、<a href="https://gtt-rgb.github.io/categories/windows/" target="_blank" rel="noopener">虚拟机安装传送门</a><br>2、<a href="https://gtt-rgb.github.io/2020/04/21/windows-ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" target="_blank" rel="noopener">双系统安装传送门</a></p>
+<h3 id="2、安装ROS操作系统"><a href="#2、安装ROS操作系统" class="headerlink" title="2、安装ROS操作系统"></a>2、安装ROS操作系统</h3><p>1、<a href="https://gtt-rgb.github.io/2020/04/21/ubuntu%E5%AE%89%E8%A3%85ROS/" target="_blank" rel="noopener">kinetic版本ROS安装传送门</a><br>2、注意：indigo版本以上ROS均可</p>
+<h3 id="3、ROS组网"><a href="#3、ROS组网" class="headerlink" title="3、ROS组网"></a>3、ROS组网</h3><p>1、连接Roch路由器。<br>2、在ubuntu系统下修改bashrc文件，添加<br><code>export ROS_MASTER_URI:http：//“roch的ip地址”：11311；export ROS_HOSTNAME=“ubunutu的ip地址”</code>，后续简称ubuntu为当前系统名称，Roch为小车名称。</p>
+<h3 id="4、控制ROCH移动"><a href="#4、控制ROCH移动" class="headerlink" title="4、控制ROCH移动"></a>4、控制ROCH移动</h3><p>1、ubuntu下apt-get安装ssh客户端：命令<code>sudo apt-get install openssh-client</code><br>2、ubuntu下通过ssh连接Roch，命令<code>ssh ubuntu@“ROCH的ip地址”</code>，输入密码后登陆。<br>3、登陆成功后在当前terminal输入<code>roslaunch roch_bringup minimal.launch</code>，启动Roch底盘。<br>4、重开一个termina通过ssh连接Roch，输入密码登陆。<br>5、登陆成功后在当前termina输入<code>roslaunch roch_teleop keyboard_teleop.launch</code>,根据终端提示操作键盘即可。<br>6、体验完成之后关闭所有终端。</p>
+<h3 id="5、ROCH通过RGBD深度摄像头追踪人体"><a href="#5、ROCH通过RGBD深度摄像头追踪人体" class="headerlink" title="5、ROCH通过RGBD深度摄像头追踪人体"></a>5、ROCH通过RGBD深度摄像头追踪人体</h3><p>1、ubuntu下通过ssh连接ROCH，输入密码登陆。<br>2、在当前终端下输入<code>roslaunch roch_bringup minimal.launch</code>，启动Roch底盘。<br>3、重开一个termina通过ssh连接Roch，输入密码登陆。<br>4、在当前终端下输入<code>roslaunch roch_follower follower.launch</code>，机器人会自动进行人体追踪。<br>5、体验完成之后关闭所有终端。</p>
+<h3 id="6、ROCH地图构建"><a href="#6、ROCH地图构建" class="headerlink" title="6、ROCH地图构建"></a>6、ROCH地图构建</h3><p>1、ubuntu下通过ssh连接ROCH，输入密码登陆。<br>2、在当前终端下输入<code>roslaunch roch_bringup minimal.launch</code>，启动Roch底盘。<br>3、重开一个termina通过ssh连接Roch，输入密码登陆。<br>4、当前终端下输入<code>roslaunch roch_navigation gmapping_demo.launch</code>，启动地图绘制。<br>5、重开一个termina通过ssh连接Roch，输入密码登陆。<br>6、当前终端下输入<code>roslaunch roch_teleop keyboard_teleop.launch</code>，控制机器人移动从而使其构建完整地图信息。<br>7、重开一个terminal，输入rviz进行启动，增加MAP控件与TF控件，分别监测topic-<code>/map，/base_link</code>，可视化地图信息。<br>8、地图构建完毕后，在相应目录下进行存取（自己任意创建目录），命令为<code>rosrun map_server map_saver -f &quot;自己起地图名字&quot;</code>。<br>9、体验完成之后关闭所有终端。</p>
+<h3 id="7、ROCH导航"><a href="#7、ROCH导航" class="headerlink" title="7、ROCH导航"></a>7、ROCH导航</h3><p>1、ubuntu下通过ssh连接ROCH，输入密码登陆。<br>2、输入vim ~/.bashrc 修改读取地图目录（改为自己创建目录名）。修改位置为：<code>export ROCH_FILE=.......</code>。<br>3、ubuntu下通过ssh连接ROCH，输入密码登陆。<br>4、在当前终端下输入<code>roslaunch roch_bringup minimal.launch</code>，启动Roch底盘。<br>5、重开一个termina通过ssh连接Roch，输入密码登陆。<br>6、当前终端下输入<code>roslaunch roch_navigation amcl_demo.launch</code>，启动地图导航。<br>7、重开一个terminal，输入rviz进行启动，增加MAP控件与TF控件并设置相应topic后（同6、ROCH地图构建），在rviz上侧点击nav_goal并将光标移至地图设定导航位置，ROCH会自动到达至目标。<br>8、体验完成之后关闭所有终端。</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>1、ROCH路由器密码为rochsyrobot<br>2、ROCH的密码为ubuntu<br>3、usb-hub需加移动电源，否则传感器设备电压不足无法正常启动。</p>
+]]></content>
+      <categories>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
   </entry>
   <entry>
     <title>ROS安装雷达驱动报错</title>
@@ -78,9 +104,9 @@
       </tags>
   </entry>
   <entry>
-    <title>python基础学习一</title>
-    <url>/2020/05/04/python%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%B8%80/</url>
-    <content><![CDATA[<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>1、<a href="https://www.bilibili.com/video/BV16E411G7sd?from=search&seid=13237862902535014303" target="_blank" rel="noopener">B站pandas教程</a><br>2、<a href="https://www.cnblogs.com/ifantastic/p/3811145.html" target="_blank" rel="noopener">python的列表复制</a><br>3、<a href="https://www.bilibili.com/video/BV1jW411Y7dL" target="_blank" rel="noopener">B站tkinter教程</a></p>
+    <title>python基础学习二</title>
+    <url>/2020/05/04/python%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%BA%8C/</url>
+    <content><![CDATA[<h3 id="参考文献（数据处理及gui）"><a href="#参考文献（数据处理及gui）" class="headerlink" title="参考文献（数据处理及gui）"></a>参考文献（数据处理及gui）</h3><p>1、<a href="https://www.bilibili.com/video/BV16E411G7sd?from=search&seid=13237862902535014303" target="_blank" rel="noopener">B站pandas教程</a><br>2、<a href="https://www.cnblogs.com/TensorSense/p/6795995.html" target="_blank" rel="noopener">NUMPY库函数</a><br>3、<a href="https://www.bilibili.com/video/BV1jW411Y7dL" target="_blank" rel="noopener">B站tkinter教程</a></p>
 ]]></content>
       <categories>
         <category>Python</category>
