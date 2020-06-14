@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ROS系统下使用语音交互设置导航点</title>
+    <url>/2020/06/14/ROS%E7%B3%BB%E7%BB%9F%E4%B8%8B%E4%BD%BF%E7%94%A8%E8%AF%AD%E9%9F%B3%E4%BA%A4%E4%BA%92%E8%AE%BE%E7%BD%AE%E5%AF%BC%E8%88%AA%E7%82%B9/</url>
+    <content><![CDATA[<h3 id="1、使用snowboy进行语音软唤醒"><a href="#1、使用snowboy进行语音软唤醒" class="headerlink" title="1、使用snowboy进行语音软唤醒"></a>1、使用snowboy进行语音软唤醒</h3><p>1、<a href="https://blog.csdn.net/weixin_44791964/article/details/103305241?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase#commentBox" target="_blank" rel="noopener">SnowBoy语音唤醒-跑例程传送门</a><br>2、<a href="https://www.jianshu.com/p/a1c06020f5fd" target="_blank" rel="noopener">SnowBoy语音唤醒-补充教程传送门</a><br>3、建议编译用python2进行绑定，因为ROS用的python版本是2，如果用python3，将无法兼容rospy与snowboy的库函数，继而无法撰写ROS节点。<br>4、在其他目录下编写python文件通常无法调用snowboy的库函数，其原因为搜索不到snowboy库函数路径信息，<a href="https://www.cnblogs.com/rexcheny/p/9504892.html" target="_blank" rel="noopener">解决教程传送门ubuntu</a></p>
+<h3 id="2、科大讯飞语音识别、语音合成控制turtlebot导航"><a href="#2、科大讯飞语音识别、语音合成控制turtlebot导航" class="headerlink" title="2、科大讯飞语音识别、语音合成控制turtlebot导航"></a>2、科大讯飞语音识别、语音合成控制turtlebot导航</h3><p>1、<a href="https://blog.csdn.net/qq_37668436/article/details/104674938" target="_blank" rel="noopener">传送门一</a>，主要完成了科大讯飞API、turtlebot3的下载及编写部分脚本。<br>2、<a href="https://blog.csdn.net/qq_37668436/article/details/104712220" target="_blank" rel="noopener">传送门二</a>，主要对语音识别、语音合成进行测试并将demo改成ROS节点。事实上，二、使用科大讯飞语音SDK章节所给第一个链接已经很好地完成语音识别功能，但是语音合成存在部分问题，主要包括头文件、toexit（）函数、以及语音播放卡顿问题，利用2.1 测试语音合成提供的链接可以很好的解决如上提出的前两个问题，但是对于第三个问题，建议<code>使用system！！！！！！忘记命令，有时间补上</code>。最后是博主撰写一个脚本用于接收语音信息并将其转换为目标点发送出去。3.1 修改语音识别的源码部分建议大家自主考虑。<br>3、<a href="https://blog.csdn.net/qq_37668436/article/details/104729239" target="_blank" rel="noopener">传送门三</a>，对前面做的功能进行了优化。</p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>1、<a href="https://www.cnblogs.com/TooyLee/p/7739783.html" target="_blank" rel="noopener">ROS自带功能包进行语音识别，自行体验</a></p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>1、<a href="https://blog.csdn.net/u011573853/article/details/103164128/" target="_blank" rel="noopener">mplayer: could not connect to socket mplaye解决方案</a></p>
+]]></content>
+      <categories>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>python学习基础一</title>
     <url>/2020/06/08/python%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E4%B8%80/</url>
     <content><![CDATA[<h3 id="参考文献（python列表操作）"><a href="#参考文献（python列表操作）" class="headerlink" title="参考文献（python列表操作）"></a>参考文献（python列表操作）</h3><p>1、<a href="https://www.thinbug.com/q/4918425" target="_blank" rel="noopener">python列表减值</a><br>2、<a href="https://www.cnblogs.com/zhangdingqu/p/9501431.html" target="_blank" rel="noopener">python列表增加元素</a><br>3、<a href="https://www.cnblogs.com/ifantastic/p/3811145.html" target="_blank" rel="noopener">python的列表复制</a></p>
@@ -723,7 +738,7 @@ sess.run(init)</code></li>
 <h3 id="1、修改ubuntu两个python优先级"><a href="#1、修改ubuntu两个python优先级" class="headerlink" title="1、修改ubuntu两个python优先级"></a>1、<a href="https://www.cnblogs.com/elitphil/p/11525951.html" target="_blank" rel="noopener">修改ubuntu两个python优先级</a></h3><h3 id="2、ubuntu换源提高下载速度-pip也可设置源"><a href="#2、ubuntu换源提高下载速度-pip也可设置源" class="headerlink" title="2、ubuntu换源提高下载速度(pip也可设置源)"></a>2、<a href="https://blog.csdn.net/u012308586/article/details/102953882" target="_blank" rel="noopener">ubuntu换源提高下载速度(pip也可设置源)</a></h3><blockquote>
 <p><strong><strong>注意</strong></strong></p>
 </blockquote>
-<h3 id="1、在python2-7安装功能包时要用pip2，在python3-5安装功能包时要用pip3！！！！"><a href="#1、在python2-7安装功能包时要用pip2，在python3-5安装功能包时要用pip3！！！！" class="headerlink" title="1、在python2.7安装功能包时要用pip2，在python3.5安装功能包时要用pip3！！！！"></a>1、在python2.7安装功能包时要用pip2，在python3.5安装功能包时要用pip3！！！！</h3><h3 id="2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见tensorflow对应···版本"><a href="#2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见tensorflow对应···版本" class="headerlink" title="2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见tensorflow对应···版本"></a>2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见<a href="https://blog.csdn.net/littlehaes/article/details/100575694" target="_blank" rel="noopener">tensorflow对应···版本</a></h3>]]></content>
+<h3 id="1、在python2-7安装功能包时要用pip2，在python3-5安装功能包时要用pip3！！！！"><a href="#1、在python2-7安装功能包时要用pip2，在python3-5安装功能包时要用pip3！！！！" class="headerlink" title="1、在python2.7安装功能包时要用pip2，在python3.5安装功能包时要用pip3！！！！"></a>1、在python2.7安装功能包时要用pip2，在python3.5安装功能包时要用pip3！！！！</h3><h3 id="2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见tensorflow对应···版本"><a href="#2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见tensorflow对应···版本" class="headerlink" title="2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见tensorflow对应···版本"></a>2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见<a href="https://blog.csdn.net/littlehaes/article/details/100575694" target="_blank" rel="noopener">tensorflow对应···版本</a></h3><h3 id="3、ubuntu16-04自带python2、python3，但是相应的pip并没有进行安装，安装教程可借鉴本文"><a href="#3、ubuntu16-04自带python2、python3，但是相应的pip并没有进行安装，安装教程可借鉴本文" class="headerlink" title="3、ubuntu16.04自带python2、python3，但是相应的pip并没有进行安装，安装教程可借鉴本文"></a>3、ubuntu16.04自带python2、python3，但是相应的pip并没有进行安装，<a href="https://blog.csdn.net/sheen_zhuang/article/details/80723894" target="_blank" rel="noopener">安装教程可借鉴本文</a></h3>]]></content>
       <categories>
         <category>ubuntu</category>
       </categories>

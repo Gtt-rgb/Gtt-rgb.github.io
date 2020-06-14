@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    ubuntu两个python分别同时安装tensorflow |  搬砖工的故事
+    ROS系统下使用语音交互设置导航点 |  搬砖工的故事
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -33,7 +33,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="post-ubuntu两个python同时安装tensorflow" class="article article-type-post" itemscope
+  <article id="post-ROS系统下使用语音交互设置导航点" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -41,7 +41,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  ubuntu两个python分别同时安装tensorflow
+  ROS系统下使用语音交互设置导航点
 </h1>
  
 
@@ -50,12 +50,12 @@
 
     
     <div class="article-meta">
-      <a href="/2020/03/31/ubuntu%E4%B8%A4%E4%B8%AApython%E5%90%8C%E6%97%B6%E5%AE%89%E8%A3%85tensorflow/" class="article-date">
-  <time datetime="2020-03-31T01:42:13.000Z" itemprop="datePublished">2020-03-31</time>
+      <a href="/2020/06/14/ROS%E7%B3%BB%E7%BB%9F%E4%B8%8B%E4%BD%BF%E7%94%A8%E8%AF%AD%E9%9F%B3%E4%BA%A4%E4%BA%92%E8%AE%BE%E7%BD%AE%E5%AF%BC%E8%88%AA%E7%82%B9/" class="article-date">
+  <time datetime="2020-06-14T09:32:11.000Z" itemprop="datePublished">2020-06-14</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/ubuntu/">ubuntu</a>
+    <a class="article-category-link" href="/categories/ROS/">ROS</a>
   </div>
 
       
@@ -65,7 +65,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">212字</span>
+            <span class="post-count">419字</span>
         </span>
     </span>
 
@@ -99,19 +99,11 @@
       
 
       
-      <blockquote>
-<p><strong>本文主要对ubuntu 16.04系统自带python 2.7、python3.5同时安装tensorflow，及验证是否安装成功</strong></p>
-</blockquote>
-<h2 id="1、两个python安装tensorflow的详细教程"><a href="#1、两个python安装tensorflow的详细教程" class="headerlink" title="1、两个python安装tensorflow的详细教程"></a>1、<a href="https://blog.csdn.net/qq_41833285/article/details/99682549" target="_blank" rel="noopener">两个python安装tensorflow的详细教程</a></h2><h2 id="2、单个python版本tensorflow-gpu的安装"><a href="#2、单个python版本tensorflow-gpu的安装" class="headerlink" title="2、单个python版本tensorflow-gpu的安装"></a>2、<a href="https://blog.csdn.net/sakura__lu/article/details/80622396" target="_blank" rel="noopener">单个python版本tensorflow-gpu的安装</a></h2><h2 id="3、单个python版本tensorflow-gpu的安装2"><a href="#3、单个python版本tensorflow-gpu的安装2" class="headerlink" title="3、单个python版本tensorflow-gpu的安装2"></a>3、<a href="https://blog.csdn.net/macunshi/article/details/84638675" target="_blank" rel="noopener">单个python版本tensorflow-gpu的安装2</a></h2><h2 id="4、测试CUDA是否能用"><a href="#4、测试CUDA是否能用" class="headerlink" title="4、测试CUDA是否能用"></a>4、<a href="https://zhidao.baidu.com/question/1308108448353167699.html" target="_blank" rel="noopener">测试CUDA是否能用</a></h2><h2 id="5、测试tensor-gpu是否可用"><a href="#5、测试tensor-gpu是否可用" class="headerlink" title="5、测试tensor gpu是否可用"></a>5、<a href="https://blog.csdn.net/lidichengfo0412/article/details/102637824" target="_blank" rel="noopener">测试tensor gpu是否可用</a></h2><blockquote>
-<p><strong><strong>安装过程存在的问题</strong></strong></p>
-</blockquote>
-<h3 id="1、运行pip-提示-warning-RequestsDependencyWarning-解决方案"><a href="#1、运行pip-提示-warning-RequestsDependencyWarning-解决方案" class="headerlink" title="1、运行pip 提示(warning, RequestsDependencyWarning)解决方案"></a>1、<a href="https://www.jianshu.com/p/1072e97d5733" target="_blank" rel="noopener">运行pip 提示(warning, RequestsDependencyWarning)解决方案</a></h3><h3 id="2、libcudart-so-8-0-cannot-open-shared-object-file-No-such-file-or-directory-的解决办法"><a href="#2、libcudart-so-8-0-cannot-open-shared-object-file-No-such-file-or-directory-的解决办法" class="headerlink" title="2、libcudart.so.8.0: cannot open shared object file: No such file or directory 的解决办法"></a>2、<a href="https://blog.csdn.net/qq_38451119/article/details/81007904" target="_blank" rel="noopener">libcudart.so.8.0: cannot open shared object file: No such file or directory 的解决办法</a></h3><blockquote>
-<p><strong><strong>可选</strong></strong></p>
-</blockquote>
-<h3 id="1、修改ubuntu两个python优先级"><a href="#1、修改ubuntu两个python优先级" class="headerlink" title="1、修改ubuntu两个python优先级"></a>1、<a href="https://www.cnblogs.com/elitphil/p/11525951.html" target="_blank" rel="noopener">修改ubuntu两个python优先级</a></h3><h3 id="2、ubuntu换源提高下载速度-pip也可设置源"><a href="#2、ubuntu换源提高下载速度-pip也可设置源" class="headerlink" title="2、ubuntu换源提高下载速度(pip也可设置源)"></a>2、<a href="https://blog.csdn.net/u012308586/article/details/102953882" target="_blank" rel="noopener">ubuntu换源提高下载速度(pip也可设置源)</a></h3><blockquote>
-<p><strong><strong>注意</strong></strong></p>
-</blockquote>
-<h3 id="1、在python2-7安装功能包时要用pip2，在python3-5安装功能包时要用pip3！！！！"><a href="#1、在python2-7安装功能包时要用pip2，在python3-5安装功能包时要用pip3！！！！" class="headerlink" title="1、在python2.7安装功能包时要用pip2，在python3.5安装功能包时要用pip3！！！！"></a>1、在python2.7安装功能包时要用pip2，在python3.5安装功能包时要用pip3！！！！</h3><h3 id="2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见tensorflow对应···版本"><a href="#2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见tensorflow对应···版本" class="headerlink" title="2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见tensorflow对应···版本"></a>2、tensorflow-gpu需要对应相应的cuda与cudnn，详情见<a href="https://blog.csdn.net/littlehaes/article/details/100575694" target="_blank" rel="noopener">tensorflow对应···版本</a></h3><h3 id="3、ubuntu16-04自带python2、python3，但是相应的pip并没有进行安装，安装教程可借鉴本文"><a href="#3、ubuntu16-04自带python2、python3，但是相应的pip并没有进行安装，安装教程可借鉴本文" class="headerlink" title="3、ubuntu16.04自带python2、python3，但是相应的pip并没有进行安装，安装教程可借鉴本文"></a>3、ubuntu16.04自带python2、python3，但是相应的pip并没有进行安装，<a href="https://blog.csdn.net/sheen_zhuang/article/details/80723894" target="_blank" rel="noopener">安装教程可借鉴本文</a></h3>
+      <h3 id="1、使用snowboy进行语音软唤醒"><a href="#1、使用snowboy进行语音软唤醒" class="headerlink" title="1、使用snowboy进行语音软唤醒"></a>1、使用snowboy进行语音软唤醒</h3><p>1、<a href="https://blog.csdn.net/weixin_44791964/article/details/103305241?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase#commentBox" target="_blank" rel="noopener">SnowBoy语音唤醒-跑例程传送门</a><br>2、<a href="https://www.jianshu.com/p/a1c06020f5fd" target="_blank" rel="noopener">SnowBoy语音唤醒-补充教程传送门</a><br>3、建议编译用python2进行绑定，因为ROS用的python版本是2，如果用python3，将无法兼容rospy与snowboy的库函数，继而无法撰写ROS节点。<br>4、在其他目录下编写python文件通常无法调用snowboy的库函数，其原因为搜索不到snowboy库函数路径信息，<a href="https://www.cnblogs.com/rexcheny/p/9504892.html" target="_blank" rel="noopener">解决教程传送门ubuntu</a></p>
+<h3 id="2、科大讯飞语音识别、语音合成控制turtlebot导航"><a href="#2、科大讯飞语音识别、语音合成控制turtlebot导航" class="headerlink" title="2、科大讯飞语音识别、语音合成控制turtlebot导航"></a>2、科大讯飞语音识别、语音合成控制turtlebot导航</h3><p>1、<a href="https://blog.csdn.net/qq_37668436/article/details/104674938" target="_blank" rel="noopener">传送门一</a>，主要完成了科大讯飞API、turtlebot3的下载及编写部分脚本。<br>2、<a href="https://blog.csdn.net/qq_37668436/article/details/104712220" target="_blank" rel="noopener">传送门二</a>，主要对语音识别、语音合成进行测试并将demo改成ROS节点。事实上，二、使用科大讯飞语音SDK章节所给第一个链接已经很好地完成语音识别功能，但是语音合成存在部分问题，主要包括头文件、toexit（）函数、以及语音播放卡顿问题，利用2.1 测试语音合成提供的链接可以很好的解决如上提出的前两个问题，但是对于第三个问题，建议<code>使用system！！！！！！忘记命令，有时间补上</code>。最后是博主撰写一个脚本用于接收语音信息并将其转换为目标点发送出去。3.1 修改语音识别的源码部分建议大家自主考虑。<br>3、<a href="https://blog.csdn.net/qq_37668436/article/details/104729239" target="_blank" rel="noopener">传送门三</a>，对前面做的功能进行了优化。</p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>1、<a href="https://www.cnblogs.com/TooyLee/p/7739783.html" target="_blank" rel="noopener">ROS自带功能包进行语音识别，自行体验</a></p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>1、<a href="https://blog.csdn.net/u011573853/article/details/103164128/" target="_blank" rel="noopener">mplayer: could not connect to socket mplaye解决方案</a></p>
+
       
       <!-- reward -->
       
@@ -180,7 +172,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/03/31/ubuntu%E4%B8%A4%E4%B8%AApython%E5%90%8C%E6%97%B6%E5%AE%89%E8%A3%85tensorflow/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/06/14/ROS%E7%B3%BB%E7%BB%9F%E4%B8%8B%E4%BD%BF%E7%94%A8%E8%AF%AD%E9%9F%B3%E4%BA%A4%E4%BA%92%E8%AE%BE%E7%BD%AE%E5%AF%BC%E8%88%AA%E7%82%B9/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -198,19 +190,10 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/03/31/ubuntu%E6%90%AD%E5%BB%BAROS%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            ubuntu搭建ROS开发环境
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/03/29/ubuntu%E5%AE%89%E8%A3%85ros%E5%AD%98%E5%9C%A8%E7%9A%84rosdep_update%E9%97%AE%E9%A2%98/" class="article-nav-link">
+      <a href="/2020/06/08/python%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E4%B8%80/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">ubuntu安装ros存在的rosdep_update问题</div>
+        <div class="article-nav-title">python学习基础一</div>
       </a>
     
   </nav>
