@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ROS可借鉴资料汇总</title>
+    <url>/2020/06/14/ROS%E5%8F%AF%E5%80%9F%E9%89%B4%E8%B5%84%E6%96%99%E6%B1%87%E6%80%BB/</url>
+    <content><![CDATA[<h3 id="1、ROS中launch文件的使用"><a href="#1、ROS中launch文件的使用" class="headerlink" title="1、ROS中launch文件的使用"></a>1、ROS中launch文件的使用</h3><p>1、<a href="https://www.cnblogs.com/CZM-/p/5943821.html" target="_blank" rel="noopener">launch文件的使用</a></p>
+]]></content>
+      <categories>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ROS系统下使用语音交互设置导航点</title>
     <url>/2020/06/14/ROS%E7%B3%BB%E7%BB%9F%E4%B8%8B%E4%BD%BF%E7%94%A8%E8%AF%AD%E9%9F%B3%E4%BA%A4%E4%BA%92%E8%AE%BE%E7%BD%AE%E5%AF%BC%E8%88%AA%E7%82%B9/</url>
     <content><![CDATA[<h3 id="1、使用snowboy进行语音软唤醒"><a href="#1、使用snowboy进行语音软唤醒" class="headerlink" title="1、使用snowboy进行语音软唤醒"></a>1、使用snowboy进行语音软唤醒</h3><p>1、<a href="https://blog.csdn.net/weixin_44791964/article/details/103305241?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase#commentBox" target="_blank" rel="noopener">SnowBoy语音唤醒-跑例程传送门</a><br>2、<a href="https://www.jianshu.com/p/a1c06020f5fd" target="_blank" rel="noopener">SnowBoy语音唤醒-补充教程传送门</a><br>3、建议编译用python2进行绑定，因为ROS用的python版本是2，如果用python3，将无法兼容rospy与snowboy的库函数，继而无法撰写ROS节点。<br>4、在其他目录下编写python文件通常无法调用snowboy的库函数，其原因为搜索不到snowboy库函数路径信息，<a href="https://www.cnblogs.com/rexcheny/p/9504892.html" target="_blank" rel="noopener">解决教程传送门ubuntu</a></p>

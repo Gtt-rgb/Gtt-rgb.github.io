@@ -72,6 +72,142 @@
     
     
     
+    <article id="post-初学tensorflow-RNN" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/05/%E5%88%9D%E5%AD%A6tensorflow-RNN/"
+    >初学tensorflow-RNN</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/05/%E5%88%9D%E5%AD%A6tensorflow-RNN/" class="article-date">
+  <time datetime="2020-04-05T07:11:46.000Z" itemprop="datePublished">2020-04-05</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tensorflow/">tensorflow</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <blockquote>
+<p><strong>使用RNN对MNIST数据集分类</strong></p>
+</blockquote>
+<h3 id="1、-功能包导入"><a href="#1、-功能包导入" class="headerlink" title="1、 功能包导入"></a>1、 功能包导入</h3><pre><code>import tensorflow.compat.v1 as tf
+tf.disable_eager_execution()
+from tensorflow.examples.tutorials.mnist import input_data</code></pre><hr>
+<h3 id="2、数据集下载"><a href="#2、数据集下载" class="headerlink" title="2、数据集下载"></a>2、数据集下载</h3><pre><code>mnist = input_data.read_data_sets(&apos;MNIST_data&apos;, one_hot=True)</code></pre><hr>
+<h3 id="3、参数配置"><a href="#3、参数配置" class="headerlink" title="3、参数配置"></a>3、参数配置</h3><pre><code>lr = 0.001#学习率
+training_iters = 100#训练轮数
+batch_size = 128
+n_inputs = 28
+n_steps = 28
+n_hidden_units = 128
+n_classes = 10</code></pre><hr>
+<ul>
+<li>lr为网络学习率，training_iters为训练轮数，batch_size为每次丢入网络的simple，n_inputs是输入层的结点个数（MNIST每张图片是28*28，每行28个像素点作为网络的输入，28步后可以将整张图片全部输入），n_steps是步数（28步之后可以将整张图片输入）。n_hidden_units为隐层个数，即ceil中的结点个数.n_classes是10个类别。</li>
+</ul>
+<hr>
+<h3 id="4、权重、偏置初始化"><a href="#4、权重、偏置初始化" class="headerlink" title="4、权重、偏置初始化"></a>4、权重、偏置初始化</h3><pre><code>weights = {
+&apos;in&apos;: tf.Variable(tf.random_normal([n_inputs, n_hidden_units])),
+&apos;out&apos;: tf.Variable(tf.random_normal([n_hidden_units, n_classes]))
+}# (28, 128)、# (128, 10)
+biases = {
+&apos;in&apos;: tf.Variable(tf.constant(0.1, shape=[n_hidden_units, ])),
+&apos;out&apos;: tf.Variable(tf.constant(0.1, shape=[n_classes, ]))
+}# (128, )、# (10, )</code></pre><ul>
+<li>输入数据，经过权重与偏置计算到达ceil，在ceil处理之后通过权重与偏置计算输出。</li>
+<li>以上为输入与输出的权重、偏置。</li>
+</ul>
+<hr>
+<h3 id="5、网络输入"><a href="#5、网络输入" class="headerlink" title="5、网络输入"></a>5、网络输入</h3><pre><code>#input
+xs = tf.placeholder(tf.float32, [None, n_steps, n_inputs])
+ys = tf.placeholder(tf.float32, [None, n_classes])</code></pre><ul>
+<li>MNIST数据为simple<em>784，需要将其还原为28</em>28结构。</li>
+<li>10分类，采用one_hot编码，同样需要将label重塑为[simple.10]结构。</li>
+</ul>
+<hr>
+<h3 id="6、RNN隐层"><a href="#6、RNN隐层" class="headerlink" title="6、RNN隐层"></a>6、RNN隐层</h3><pre><code>def RNN(X, weights, biases):#输入，权重，偏置
+    X = tf.reshape(X, [-1, 28])#(128 * 28, 28 )
+    X_in = tf.matmul(X, weights[&apos;in&apos;]) + biases[&apos;in&apos;]#(128 * 28, 128 )
+    X_in = tf.reshape(X_in, [-1, n_steps, n_hidden_units])#(128 ，28, 128 )#时间序列
+    cell = tf.nn.rnn_cell.BasicLSTMCell(n_hidden_units, forget_bias=1.0, state_is_tuple=True)
+    init_state = cell.zero_state(batch_size=batch_size, dtype=tf.float32)
+    outputs, final_state = tf.nn.dynamic_rnn(cell, X_in, initial_state=init_state, time_major=False)#time_major代表时间序列
+    outputs = tf.unstack(tf.transpose(outputs, [1, 0, 2]))
+    results = tf.matmul(outputs[-1], weights[&apos;out&apos;]) + biases[&apos;out&apos;]#(另外一种定义方法，不理解)results = tf.matmul(final_state[1], weights[&apos;out&apos;]) + biases[&apos;out&apos;]#应该是仅仅考虑了短期记忆
+    return results
+pred = RNN(xs, weights, biases)</code></pre><ul>
+<li>形参（输入数据、权重、偏置）</li>
+<li>将数据重塑为[simple*28,28]结构，使数据能够根据权重进行计算，计算完成后需要继续重塑，目的是能够以时间序列输入至ceil中，重塑后的结构为[simple.28.128]，(其中simple是进入的数据个数，28是时间序列，128是数据根据权重计算出来的新维度)。</li>
+<li>init_state中，需要对batch_size进行初始化，目的是为每张图片增添一个可传递的记忆状态。（每张图片分28步进行，RNN根据之前的记忆与当前的输入进行分类或回归）</li>
+<li><code>tf.nn.dynamic_rnn</code>暂时理解为融合当前数据与记忆得出的结果。<br><img src="/2020/04/05/%E5%88%9D%E5%AD%A6tensorflow-RNN/22.jpg" alt="图片来源为https://www.zhihu.com/question/41949741?sort=created"></li>
+</ul>
+<hr>
+<h3 id="7、网络编译"><a href="#7、网络编译" class="headerlink" title="7、网络编译"></a>7、网络编译</h3><pre><code>cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=pred, labels=ys))
+train_op = tf.train.AdamOptimizer(lr).minimize(cost)</code></pre><ul>
+<li>采用交叉熵损失计算方法与Adam优化器</li>
+</ul>
+<hr>
+<h3 id="8、参数初始化与网络训练"><a href="#8、参数初始化与网络训练" class="headerlink" title="8、参数初始化与网络训练"></a>8、参数初始化与网络训练</h3><pre><code>with tf.Session() as sess:
+    init = tf.global_variables_initializer()
+    sess.run(init)
+    for i in range(training_iters):
+        batch_xs, batch_ys = mnist.train.next_batch(128)
+        batch_xs = batch_xs.reshape([batch_size, n_steps, n_inputs])
+        sess.run(train_op, feed_dict={xs: batch_xs, ys: batch_ys})</code></pre><hr>
+<h3 id="9、代码已上传本人github-其主要根据莫烦代码修改而成。"><a href="#9、代码已上传本人github-其主要根据莫烦代码修改而成。" class="headerlink" title="9、代码已上传本人github,其主要根据莫烦代码修改而成。"></a>9、代码已上传<a href="https://github.com/Gtt-rgb/study_tensorflow" target="_blank" rel="noopener">本人github</a>,其主要根据莫烦代码修改而成。</h3><h3 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h3><p>1、<a href="https://www.zhihu.com/question/41949741?sort=created" target="_blank" rel="noopener">RNN输入输出详解</a><br>2、<a href="https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/3-4-A-speed-up-learning/" target="_blank" rel="noopener">莫烦tensorflow教程</a></p>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%93%BE%E6%8E%A5/" rel="tag">链接</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
     <article id="post-初学tensorflow-CNN" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -939,89 +1075,13 @@ sess.run(init)</code></li>
 
 </article>
     
-    <article id="post-hello-world" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2020/03/26/hello-world/"
-    >Hello World</a> 
-</h2>
- 
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2020/03/26/hello-world/" class="article-date">
-  <time datetime="2020-03-26T06:59:56.638Z" itemprop="datePublished">2020-03-26</time>
-</a>
-      
-      
-      
-      
-    </div>
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-
-      
-      <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-      <!-- reward -->
-      
-    </div>
-    
-    
-      <!-- copyright -->
-      
-    <footer class="article-footer">
-      
-      
-
-    </footer>
-
-  </div>
-
-  
-
-  
-  
-  
-
-  
-
-</article>
-    
   </article>
   
 
   
   <nav class="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">下一页</a>
   </nav>
   
 </section>
