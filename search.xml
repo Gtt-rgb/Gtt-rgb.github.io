@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Python学习基础四（数学计算）</title>
+    <url>/2020/07/20/Python%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E5%9B%9B%EF%BC%88%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97%EF%BC%89/</url>
+    <content><![CDATA[<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>1、<a href="http://www.voidcn.com/article/p-zxrjabvl-bwa.html" target="_blank" rel="noopener">两点之间的角度计算</a><br>2、<a href="https://blog.csdn.net/qq_41618091/article/details/96863765?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight" target="_blank" rel="noopener">Python的点乘计算</a></p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>1、<a href="https://www.zybang.com/question/6ebb49840875d18832169070beb1c250.html" target="_blank" rel="noopener">数值转换为角度的数学原理</a></p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PS画表盘</title>
+    <url>/2020/07/20/PS%E7%94%BB%E8%A1%A8%E7%9B%98/</url>
+    <content><![CDATA[<h3 id="1、-传送门"><a href="#1、-传送门" class="headerlink" title="1、[传送门]("></a>1、[传送门](</h3><p><a href="https://jingyan.baidu.com/article/c1a3101e424c8bde646deb47.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/c1a3101e424c8bde646deb47.html</a>)</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>1、用铅笔画直线时，需要新建图层！</p>
+]]></content>
+      <categories>
+        <category>PS</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>windows安装PR</title>
+    <url>/2020/07/20/windows%E5%AE%89%E8%A3%85PR/</url>
+    <content><![CDATA[<h3 id="1、网盘下载PR安装包"><a href="#1、网盘下载PR安装包" class="headerlink" title="1、网盘下载PR安装包"></a>1、网盘下载PR安装包</h3><h3 id="2、安装流程"><a href="#2、安装流程" class="headerlink" title="2、安装流程"></a>2、安装流程</h3><p><a href="https://jingyan.baidu.com/article/86fae34662fcb77c49121aa7.html" target="_blank" rel="noopener">传送门</a></p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>1、登陆账户时需要断网执行<br>2、注意复制两个文件</p>
+]]></content>
+      <categories>
+        <category>windows</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ROS的功能包参数解释说明</title>
     <url>/2020/07/03/ROS%E7%9A%84%E5%8A%9F%E8%83%BD%E5%8C%85%E5%8F%82%E6%95%B0%E8%A7%A3%E9%87%8A%E8%AF%B4%E6%98%8E/</url>
     <content><![CDATA[<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>1、<a href="https://www.jianshu.com/p/999575fdc2e8" target="_blank" rel="noopener">gmapping参数解释</a></p>
@@ -15,7 +54,7 @@
   <entry>
     <title>python学习基础三（tk）</title>
     <url>/2020/07/03/python%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E4%B8%89%EF%BC%88tk%EF%BC%89/</url>
-    <content><![CDATA[<h3 id="参考文献（tk）"><a href="#参考文献（tk）" class="headerlink" title="参考文献（tk）"></a>参考文献（tk）</h3><p>1、<a href="https://www.bilibili.com/video/BV1jW411Y7dL" target="_blank" rel="noopener">B站tkinter教程</a><br>2、<a href="https://blog.csdn.net/A757291228/article/details/106739556" target="_blank" rel="noopener">canvas:create_arc控件</a><br>3、<a href="https://blog.csdn.net/wangxiaobei2017/article/details/84546098?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight" target="_blank" rel="noopener">tk显示图片</a></p>
+    <content><![CDATA[<h3 id="参考文献（tk）"><a href="#参考文献（tk）" class="headerlink" title="参考文献（tk）"></a>参考文献（tk）</h3><p>1、<a href="https://www.bilibili.com/video/BV1jW411Y7dL" target="_blank" rel="noopener">B站tkinter教程</a><br>2、<a href="https://blog.csdn.net/A757291228/article/details/106739556" target="_blank" rel="noopener">canvas:create_arc控件</a><br>3、<a href="https://blog.csdn.net/wangxiaobei2017/article/details/84546098?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight" target="_blank" rel="noopener">tk显示图片</a><br>4、<a href="https://www.cnblogs.com/LQZ888/p/12753153.html" target="_blank" rel="noopener">tk自动为创建的属性分配动态变量名</a></p>
 <h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>1、tk显示图片中，需要声明<code>image</code>变量为全局，否则不显示。</p>
 ]]></content>
       <categories>
@@ -67,8 +106,9 @@
   </entry>
   <entry>
     <title>python学习基础一（列表）</title>
-    <url>/2020/06/08/python%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E4%B8%80/</url>
+    <url>/2020/06/08/python%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E4%B8%80%EF%BC%88%E5%88%97%E8%A1%A8%EF%BC%89/</url>
     <content><![CDATA[<h3 id="参考文献（python列表操作）"><a href="#参考文献（python列表操作）" class="headerlink" title="参考文献（python列表操作）"></a>参考文献（python列表操作）</h3><p>1、<a href="https://www.thinbug.com/q/4918425" target="_blank" rel="noopener">python列表减值</a><br>2、<a href="https://www.cnblogs.com/zhangdingqu/p/9501431.html" target="_blank" rel="noopener">python列表增加元素</a><br>3、<a href="https://www.cnblogs.com/ifantastic/p/3811145.html" target="_blank" rel="noopener">python的列表复制</a></p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>1、<a href="https://jingyan.baidu.com/article/e6c8503cb72e7de54f1a182e.html" target="_blank" rel="noopener">Pythond文件之间的调用</a><br>2、<a href="https://blog.csdn.net/qingwufeiyang12346/article/details/80871093" target="_blank" rel="noopener">调用其他python文件标红</a></p>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -170,8 +210,8 @@
   </entry>
   <entry>
     <title>python基础学习二（数据处理）</title>
-    <url>/2020/05/04/python%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%BA%8C/</url>
-    <content><![CDATA[<h3 id="参考文献（数据处理）"><a href="#参考文献（数据处理）" class="headerlink" title="参考文献（数据处理）"></a>参考文献（数据处理）</h3><p>1、<a href="https://www.bilibili.com/video/BV16E411G7sd?from=search&seid=13237862902535014303" target="_blank" rel="noopener">B站pandas教程</a><br>2、<a href="https://www.cnblogs.com/TensorSense/p/6795995.html" target="_blank" rel="noopener">NUMPY库函数</a></p>
+    <url>/2020/05/04/python%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%BA%8C%EF%BC%88%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%EF%BC%89/</url>
+    <content><![CDATA[<h3 id="参考文献（数据处理）"><a href="#参考文献（数据处理）" class="headerlink" title="参考文献（数据处理）"></a>参考文献（数据处理）</h3><p>1、<a href="https://www.bilibili.com/video/BV16E411G7sd?from=search&seid=13237862902535014303" target="_blank" rel="noopener">B站pandas教程</a><br>2、<a href="https://www.cnblogs.com/TensorSense/p/6795995.html" target="_blank" rel="noopener">NUMPY库函数</a><br>3、<a href="https://www.jianshu.com/p/575f4b9a3858" target="_blank" rel="noopener">pandas数据保存</a><br>4、<a href="https://blog.csdn.net/weixin_32759777/article/details/103692891?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~first_rank_v2~rank_v25-1-103692891.nonecase" target="_blank" rel="noopener">STR格式转列表</a><br>5、<a href="https://blog.csdn.net/christianashannon/article/details/78867204?utm_source=blogkpcl6" target="_blank" rel="noopener">产生随机数</a></p>
 ]]></content>
       <categories>
         <category>Python</category>
