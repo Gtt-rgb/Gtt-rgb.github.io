@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Windows安装Aurora</title>
+    <url>/2020/08/19/Windows%E5%AE%89%E8%A3%85Aurora/</url>
+    <content><![CDATA[<h3 id="1、安装总流程"><a href="#1、安装总流程" class="headerlink" title="1、安装总流程"></a>1、安装总流程</h3><p><a href="https://wenku.baidu.com/view/dce7e5bdcd22bcd126fff705cc17552707225e6e.html" target="_blank" rel="noopener">传送门</a></p>
+<h3 id="2、安装AURORA部分"><a href="#2、安装AURORA部分" class="headerlink" title="2、安装AURORA部分"></a>2、安装AURORA部分</h3><p>1、<a href="https://jingyan.baidu.com/article/08b6a591969d5a14a8092294.html" target="_blank" rel="noopener">传送门</a><br>2、安装时√号全部取消</p>
+<h3 id="3、安装Cetx"><a href="#3、安装Cetx" class="headerlink" title="3、安装Cetx"></a>3、安装Cetx</h3><p><a href="https://blog.csdn.net/muzhicihe/article/details/80326090" target="_blank" rel="noopener">传送门</a></p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>1、若不能使用：将时间调到2005年后在调回测试。</p>
+]]></content>
+      <categories>
+        <category>windows</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Use_Science_Tools</title>
+    <url>/2020/08/19/Use_Science-Tools/</url>
+    <content><![CDATA[<p>1、<a href="https://www.zhihu.com/topic/19674200/hot" target="_blank" rel="noopener">Mendeleys文献管理工具使用</a><br>2、<a href="https://blog.csdn.net/taoyafan/article/details/80380651" target="_blank" rel="noopener">论文插入伪代码</a></p>
+]]></content>
+      <categories>
+        <category>Science_Tools</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSDN_star</title>
+    <url>/2020/08/19/CSDN-star/</url>
+    <content><![CDATA[<p>1、<a href="https://blog.csdn.net/hhaowang/article/details/101432545" target="_blank" rel="noopener">博主：路径规划与ROS</a></p>
+]]></content>
+      <categories>
+        <category>CSDN</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python学习基础五（可视化）</title>
+    <url>/2020/08/19/python%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E4%BA%94%EF%BC%88%E5%8F%AF%E8%A7%86%E5%8C%96%EF%BC%89/</url>
+    <content><![CDATA[<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>1、<a href="https://jingyan.baidu.com/article/9faa7231f19e79473c28cb9f.html" target="_blank" rel="noopener">折线图可视化数据</a></p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python学习基础四（数学计算）</title>
     <url>/2020/07/20/Python%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E5%9B%9B%EF%BC%88%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97%EF%BC%89/</url>
     <content><![CDATA[<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>1、<a href="http://www.voidcn.com/article/p-zxrjabvl-bwa.html" target="_blank" rel="noopener">两点之间的角度计算</a><br>2、<a href="https://blog.csdn.net/qq_41618091/article/details/96863765?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight" target="_blank" rel="noopener">Python的点乘计算</a></p>
