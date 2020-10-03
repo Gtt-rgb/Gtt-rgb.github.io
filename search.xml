@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>windows无屏幕通过SSH连接树莓派</title>
+    <url>/2020/10/03/windows%E6%97%A0%E5%B1%8F%E5%B9%95%E9%80%9A%E8%BF%87SSH%E8%BF%9E%E6%8E%A5%E6%A0%91%E8%8E%93%E6%B4%BE/</url>
+    <content><![CDATA[<h2 id="1、总体流程"><a href="#1、总体流程" class="headerlink" title="1、总体流程"></a>1、<a href="https://blog.csdn.net/qq_33446100/article/details/103893065" target="_blank" rel="noopener">总体流程</a></h2><h2 id="2、总体流程2"><a href="#2、总体流程2" class="headerlink" title="2、总体流程2"></a>2、<a href="https://blog.csdn.net/weixin_42023805/article/details/82355338" target="_blank" rel="noopener">总体流程2</a></h2><h2 id="3、给树莓派创建SSH空文件"><a href="#3、给树莓派创建SSH空文件" class="headerlink" title="3、给树莓派创建SSH空文件"></a>3、<a href="https://blog.csdn.net/weixin_45764718/article/details/102959066" target="_blank" rel="noopener">给树莓派创建SSH空文件</a></h2><h2 id="4、设置树莓无密码自动开机登陆"><a href="#4、设置树莓无密码自动开机登陆" class="headerlink" title="4、设置树莓无密码自动开机登陆"></a>4、<a href="https://blog.csdn.net/qq_38441692/article/details/102887055" target="_blank" rel="noopener">设置树莓无密码自动开机登陆</a></h2>]]></content>
+      <categories>
+        <category>windows</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自制ROS小车参考资料</title>
+    <url>/2020/10/03/%E8%87%AA%E5%88%B6ROS%E5%B0%8F%E8%BD%A6%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/</url>
+    <content><![CDATA[<h2 id="1、下位机"><a href="#1、下位机" class="headerlink" title="1、下位机"></a>1、下位机</h2><p>1、<a href="https://blog.csdn.net/jialing678/article/details/85917234" target="_blank" rel="noopener">参考</a><br>2、<a href="https://www.china-scratch.com/news/8333" target="_blank" rel="noopener">windows配置arduino ide</a><br>3、<a href="https://blog.csdn.net/lixia755324/article/details/80741387?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~top_click~default-1-80741387.nonecase&utm_term=arduinomega2560" target="_blank" rel="noopener">下位机mega2560资料</a><br>4、<a href="https://blog.csdn.net/m0_37504189/article/details/89289866" target="_blank" rel="noopener">arduino的中断函数</a><br>5、<a href="https://blog.csdn.net/m0_37504189/article/details/89289866" target="_blank" rel="noopener">pid算法</a></p>
+<h2 id="2、上位机Couldn’t-find-an-AF-INET-address"><a href="#2、上位机Couldn’t-find-an-AF-INET-address" class="headerlink" title="2、上位机Couldn’t find an AF_INET address"></a>2、上位机Couldn’t find an AF_INET address</h2><p>需要在小车端设置IP，<a href="https://blog.csdn.net/n66040927/article/details/79012998" target="_blank" rel="noopener">解决方案如。</a></p>
+]]></content>
+      <categories>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu命令行</title>
+    <url>/2020/10/03/Ubuntu%E5%91%BD%E4%BB%A4%E8%A1%8C/</url>
+    <content><![CDATA[<h2 id="1、删除文件"><a href="#1、删除文件" class="headerlink" title="1、删除文件"></a>1、删除文件</h2><p><a href="https://zhidao.baidu.com/question/55179721.html" target="_blank" rel="noopener">传送门</a></p>
+<h2 id="2、扫描本网段下所有IP"><a href="#2、扫描本网段下所有IP" class="headerlink" title="2、扫描本网段下所有IP"></a>2、扫描本网段下所有IP</h2><p><a href="https://blog.csdn.net/adream307/article/details/8460876/" target="_blank" rel="noopener">传送门</a></p>
+<h2 id="3、ubuntu分屏"><a href="#3、ubuntu分屏" class="headerlink" title="3、ubuntu分屏"></a>3、ubuntu分屏</h2><p><a href="https://blog.csdn.net/wuguangbin1230/article/details/77133203" target="_blank" rel="noopener">传送门</a></p>
+<h2 id="4、命令查询USB信息"><a href="#4、命令查询USB信息" class="headerlink" title="4、命令查询USB信息"></a>4、命令查询USB信息</h2><pre><code>ls /dev/tty*</code></pre><p>通过拔插USB可以很明确了解当前所插入USB设备，<a href="https://blog.csdn.net/cleverhorse/article/details/89001248" target="_blank" rel="noopener">或者参考此链接</a></p>
+]]></content>
+      <categories>
+        <category>ubuntu</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu配置arduino环境</title>
+    <url>/2020/10/03/Ubuntu%E9%85%8D%E7%BD%AEarduino%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h2 id="1、ubuntu配置arduino环境"><a href="#1、ubuntu配置arduino环境" class="headerlink" title="1、ubuntu配置arduino环境"></a>1、ubuntu配置arduino环境</h2><p><a href="https://blog.csdn.net/z659941528/article/details/8627323" target="_blank" rel="noopener">传送门</a></p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>1、arduino ide串口的使用，需要ubuntu给予所插入USB串口权限，权限命令为<code>sudo chmod 666 /dev/tty??</code><br>2、<a href="https://www.arduino.cn/thread-5838-1-1.html" target="_blank" rel="noopener">arduino的官网</a></p>
+]]></content>
+      <categories>
+        <category>ubuntu</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows安装Aurora</title>
     <url>/2020/08/19/Windows%E5%AE%89%E8%A3%85Aurora/</url>
     <content><![CDATA[<h3 id="1、安装总流程"><a href="#1、安装总流程" class="headerlink" title="1、安装总流程"></a>1、安装总流程</h3><p><a href="https://wenku.baidu.com/view/dce7e5bdcd22bcd126fff705cc17552707225e6e.html" target="_blank" rel="noopener">传送门</a></p>
@@ -30,8 +82,7 @@
   <entry>
     <title>CSDN_star</title>
     <url>/2020/08/19/CSDN-star/</url>
-    <content><![CDATA[<p>1、<a href="https://blog.csdn.net/hhaowang/article/details/101432545" target="_blank" rel="noopener">博主：路径规划与ROS</a></p>
-]]></content>
+    <content><![CDATA[<h2 id="1、博主：路径规划与ROS"><a href="#1、博主：路径规划与ROS" class="headerlink" title="1、博主：路径规划与ROS"></a>1、<a href="https://blog.csdn.net/hhaowang/article/details/101432545" target="_blank" rel="noopener">博主：路径规划与ROS</a></h2><h2 id="2、ROS学习笔记"><a href="#2、ROS学习笔记" class="headerlink" title="2、ROS学习笔记"></a>2、<a href="https://blog.csdn.net/qq_42145185/article/details/81022178" target="_blank" rel="noopener">ROS学习笔记</a></h2>]]></content>
       <categories>
         <category>CSDN</category>
       </categories>
@@ -188,9 +239,10 @@
       </tags>
   </entry>
   <entry>
-    <title>ROS安装雷达驱动报错</title>
-    <url>/2020/06/08/ROS%E5%AE%89%E8%A3%85%E9%9B%B7%E8%BE%BE%E9%A9%B1%E5%8A%A8%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<h3 id="1、报错原因：串口问题，解决方案如下"><a href="#1、报错原因：串口问题，解决方案如下" class="headerlink" title="1、报错原因：串口问题，解决方案如下"></a>1、报错原因：串口问题，解决方案如下</h3><p><a href="https://blog.csdn.net/weixin_37944830/article/details/84640919" target="_blank" rel="noopener">传送门</a></p>
+    <title>ROS报错解决</title>
+    <url>/2020/06/08/ROS%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<h3 id="1、雷达驱动报错原因：串口问题，解决方案如下"><a href="#1、雷达驱动报错原因：串口问题，解决方案如下" class="headerlink" title="1、雷达驱动报错原因：串口问题，解决方案如下"></a>1、雷达驱动报错原因：串口问题，解决方案如下</h3><p><a href="https://blog.csdn.net/weixin_37944830/article/details/84640919" target="_blank" rel="noopener">传送门</a></p>
+<h3 id="2、ROS的RQT-PLOT报错，解决方案如下"><a href="#2、ROS的RQT-PLOT报错，解决方案如下" class="headerlink" title="2、ROS的RQT_PLOT报错，解决方案如下"></a>2、ROS的RQT_PLOT报错，解决方案如下</h3><p><a href="https://www.freesion.com/article/65691015485/" target="_blank" rel="noopener">传送门</a></p>
 ]]></content>
       <categories>
         <category>ROS</category>
