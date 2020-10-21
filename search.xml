@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>windows安装网络打印机</title>
+    <url>/2020/10/21/windows%E5%AE%89%E8%A3%85%E7%BD%91%E7%BB%9C%E6%89%93%E5%8D%B0%E6%9C%BA/</url>
+    <content><![CDATA[<p>###1、设置流程<br><a href="https://jingyan.baidu.com/article/624e74590b9e4b34e8ba5a88.html" target="_blank" rel="noopener">传送门</a></p>
+]]></content>
+      <categories>
+        <category>windows</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>windows无屏幕通过SSH连接树莓派</title>
     <url>/2020/10/03/windows%E6%97%A0%E5%B1%8F%E5%B9%95%E9%80%9A%E8%BF%87SSH%E8%BF%9E%E6%8E%A5%E6%A0%91%E8%8E%93%E6%B4%BE/</url>
     <content><![CDATA[<h2 id="1、总体流程"><a href="#1、总体流程" class="headerlink" title="1、总体流程"></a>1、<a href="https://blog.csdn.net/qq_33446100/article/details/103893065" target="_blank" rel="noopener">总体流程</a></h2><h2 id="2、总体流程2"><a href="#2、总体流程2" class="headerlink" title="2、总体流程2"></a>2、<a href="https://blog.csdn.net/weixin_42023805/article/details/82355338" target="_blank" rel="noopener">总体流程2</a></h2><h2 id="3、给树莓派创建SSH空文件"><a href="#3、给树莓派创建SSH空文件" class="headerlink" title="3、给树莓派创建SSH空文件"></a>3、<a href="https://blog.csdn.net/weixin_45764718/article/details/102959066" target="_blank" rel="noopener">给树莓派创建SSH空文件</a></h2><h2 id="4、设置树莓无密码自动开机登陆"><a href="#4、设置树莓无密码自动开机登陆" class="headerlink" title="4、设置树莓无密码自动开机登陆"></a>4、<a href="https://blog.csdn.net/qq_38441692/article/details/102887055" target="_blank" rel="noopener">设置树莓无密码自动开机登陆</a></h2>]]></content>
