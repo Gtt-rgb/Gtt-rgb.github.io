@@ -92,19 +92,6 @@
       </tags>
   </entry>
   <entry>
-    <title>PS画表盘</title>
-    <url>/2020/07/20/PS%E7%94%BB%E8%A1%A8%E7%9B%98/</url>
-    <content><![CDATA[<h3 id="1、-传送门"><a href="#1、-传送门" class="headerlink" title="1、[传送门]("></a>1、[传送门](</h3><p><a href="https://jingyan.baidu.com/article/c1a3101e424c8bde646deb47.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/c1a3101e424c8bde646deb47.html</a>)</p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>1、用铅笔画直线时，需要新建图层！</p>
-]]></content>
-      <categories>
-        <category>PS</category>
-      </categories>
-      <tags>
-        <tag>链接</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>windows安装PR</title>
     <url>/2020/07/20/windows%E5%AE%89%E8%A3%85PR/</url>
     <content><![CDATA[<h3 id="1、网盘下载PR安装包"><a href="#1、网盘下载PR安装包" class="headerlink" title="1、网盘下载PR安装包"></a>1、网盘下载PR安装包</h3><h3 id="2、安装流程"><a href="#2、安装流程" class="headerlink" title="2、安装流程"></a>2、安装流程</h3><p><a href="https://jingyan.baidu.com/article/86fae34662fcb77c49121aa7.html" target="_blank" rel="noopener">传送门</a></p>
@@ -939,23 +926,5 @@ sess.run(init)</code></li>
       <tags>
         <tag>链接</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/03/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
   </entry>
 </search>
