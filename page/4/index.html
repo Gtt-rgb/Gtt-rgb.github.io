@@ -72,80 +72,6 @@
     
     
     
-    <article id="post-windows引导问题" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2020/04/21/windows%E5%BC%95%E5%AF%BC%E9%97%AE%E9%A2%98/"
-    >windows直接对ubuntu磁盘格式化导致的引导问题</a> 
-</h2>
- 
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2020/04/21/windows%E5%BC%95%E5%AF%BC%E9%97%AE%E9%A2%98/" class="article-date">
-  <time datetime="2020-04-21T12:49:24.000Z" itemprop="datePublished">2020-04-21</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/windows/">windows</a>
-  </div>
-
-      
-      
-      
-    </div>
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-
-      
-      <blockquote>
-<p><strong>在windows系统下直接对ubuntu系统所在磁盘进行格式化，会导致开机提示grub rescue问题,解决方案如下：</strong></p>
-</blockquote>
-<h3 id="1、利用软碟通做一个ubuntu启动u盘。"><a href="#1、利用软碟通做一个ubuntu启动u盘。" class="headerlink" title="1、利用软碟通做一个ubuntu启动u盘。"></a>1、利用软碟通做一个ubuntu启动u盘。</h3><p><a href="https://jingyan.baidu.com/article/574c52195fa5586c8c9dc176.html" target="_blank" rel="noopener">传送门</a></p>
-<h3 id="2、进入ubuntu试用系统，操作步骤如下："><a href="#2、进入ubuntu试用系统，操作步骤如下：" class="headerlink" title="2、进入ubuntu试用系统，操作步骤如下："></a>2、进入ubuntu试用系统，操作步骤如下：</h3><pre><code>sudo apt-get install lilo
-sudo lilo -M /dev/sda mbr</code></pre>
-      
-      <!-- reward -->
-      
-    </div>
-    
-    
-      <!-- copyright -->
-      
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%93%BE%E6%8E%A5/" rel="tag">链接</a></li></ul>
-
-
-    </footer>
-
-  </div>
-
-  
-
-  
-  
-  
-
-  
-
-</article>
-    
     <article id="post-windows-ubuntu双系统安装" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -1127,6 +1053,78 @@ sess.run(init)</code></li>
 <li>feeddict包含的是输入数据，将数据输入至train_step中进行训练。<h3 id="9、代码已上传本人github-其主要根据莫烦代码修改而成。"><a href="#9、代码已上传本人github-其主要根据莫烦代码修改而成。" class="headerlink" title="9、代码已上传本人github,其主要根据莫烦代码修改而成。"></a>9、代码已上传<a href="https://github.com/Gtt-rgb/study_tensorflow" target="_blank" rel="noopener">本人github</a>,其主要根据莫烦代码修改而成。</h3></li>
 </ul>
 <h3 id="参考文献：1、莫烦tensorflow教程"><a href="#参考文献：1、莫烦tensorflow教程" class="headerlink" title="参考文献：1、莫烦tensorflow教程"></a>参考文献：1、<a href="https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/3-4-A-speed-up-learning/" target="_blank" rel="noopener">莫烦tensorflow教程</a></h3>
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%93%BE%E6%8E%A5/" rel="tag">链接</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
+    <article id="post-ubuntu搭建ROS开发环境" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/03/31/ubuntu%E6%90%AD%E5%BB%BAROS%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"
+    >ubuntu搭建ROS开发环境</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/03/31/ubuntu%E6%90%AD%E5%BB%BAROS%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" class="article-date">
+  <time datetime="2020-03-31T01:56:20.000Z" itemprop="datePublished">2020-03-31</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ubuntu/">ubuntu</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <p><em>本文主要对ros开发环境进行搭建</em></p>
+<h2 id="1、针对于python语言开发ROS搭建pycharm开发环境"><a href="#1、针对于python语言开发ROS搭建pycharm开发环境" class="headerlink" title="1、针对于python语言开发ROS搭建pycharm开发环境"></a>1、<a href="https://www.cnblogs.com/thebreakofdawn/p/9249372.html" target="_blank" rel="noopener">针对于python语言开发ROS搭建pycharm开发环境</a></h2><h2 id="2、针对于C-语言开发ROS搭建roboware开发环境"><a href="#2、针对于C-语言开发ROS搭建roboware开发环境" class="headerlink" title="2、针对于C++语言开发ROS搭建roboware开发环境"></a>2、<a href="https://www.cnblogs.com/rjjhyj/p/11460793.html" target="_blank" rel="noopener">针对于C++语言开发ROS搭建roboware开发环境</a></h2><p><strong><em>测试</em></strong></p>
+<h3 id="1、ROS下创建第一个节点工程"><a href="#1、ROS下创建第一个节点工程" class="headerlink" title="1、ROS下创建第一个节点工程"></a>1、<a href="https://www.cnblogs.com/blue35sky/p/6078771.html" target="_blank" rel="noopener">ROS下创建第一个节点工程</a></h3><p><strong><em>安装roboware</em></strong></p>
+<h3 id="1、roboware的github地址"><a href="#1、roboware的github地址" class="headerlink" title="1、roboware的github地址"></a>1、<a href="https://github.com/tonyrobotics/RoboWare/tree/master/Studio" target="_blank" rel="noopener">roboware的github地址</a></h3>
       
       <!-- reward -->
       
