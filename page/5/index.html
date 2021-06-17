@@ -72,106 +72,6 @@
     
     
     
-    <article id="post-初学tensorflow-线性回归" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2020/04/01/%E5%88%9D%E5%AD%A6tensorflow-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"
-    >初学tensorflow-线性回归</a> 
-</h2>
- 
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2020/04/01/%E5%88%9D%E5%AD%A6tensorflow-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" class="article-date">
-  <time datetime="2020-04-01T12:37:45.000Z" itemprop="datePublished">2020-04-01</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/tensorflow/">tensorflow</a>
-  </div>
-
-      
-      
-      
-    </div>
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-
-      
-      <blockquote>
-<p><strong>通过tensorflow拟合y=a^2-0.5+槽点，以下为代码，分步解析</strong></p>
-</blockquote>
-<h3 id="1、导入功能包"><a href="#1、导入功能包" class="headerlink" title="1、导入功能包"></a>1、导入功能包</h3><pre><code>import tensorflow.compat.v1 as tf
-tf.disable_eager_execution()
-import numpy as np
-import matplotlib.pyplot as plt</code></pre><h3 id="2、设置需要拟合的函数及数据"><a href="#2、设置需要拟合的函数及数据" class="headerlink" title="2、设置需要拟合的函数及数据"></a>2、设置需要拟合的函数及数据</h3><pre><code>x_data = np.linspace(-1, 1, 300, dtype=np.float32)[:, np.newaxis]
-noise = np.random.normal(0, 0.05, x_data.shape).astype(np.float32)
-y_data = np.square(x_data) - 0.5 + noise</code></pre><h3 id="3、设计隐层的权重、偏置等"><a href="#3、设计隐层的权重、偏置等" class="headerlink" title="3、设计隐层的权重、偏置等"></a>3、设计隐层的权重、偏置等</h3><pre><code>def add_layer(inputs, in_size, out_size, activation_function=None):
-    Weights = tf.Variable(tf.random_normal([in_size, out_size]))
-    biases = tf.Variable(tf.zeros([1, out_size]) + 0.1)
-    Wx_plus_b = tf.matmul(inputs, Weights) + biases
-    if activation_function is None:
-        outputs = Wx_plus_b
-    else:
-        outputs = activation_function(Wx_plus_b)
-    return outputs</code></pre><ul>
-<li>偏置不能设置为0，令其加0.1.权重用numpy数组随机初始化，通常比全零效果好。</li>
-<li>input为输入数据，insize为输入维度，outsize为输出维度，activation_function为激活函数。</li>
-<li>tf.variable为tensorflow的变量声明，tf.constant表示常量，tf.add(a,b)表示相加，tf.assign(a,b)表示将b赋值给a，tf.matmul(a,b)表示相乘。<h3 id="4、设计网络的输入层"><a href="#4、设计网络的输入层" class="headerlink" title="4、设计网络的输入层"></a>4、设计网络的输入层</h3>  <code>xs = tf.placeholder(tf.float32, [None, 1])
-   ys = tf.placeholder(tf.float32, [None, 1])</code></li>
-<li>tensorflow通过占位符placeholder来进行数据的输入，[None,1]表示任意行1列的数据，必须包括类型<h3 id="5、设计网络的隐层"><a href="#5、设计网络的隐层" class="headerlink" title="5、设计网络的隐层"></a>5、设计网络的隐层</h3>  <code>l1 = add_layer(xs, 1, 10, activation_function=tf.nn.relu)
-   prediction = add_layer(l1, 10, 1, activation_function=None)</code></li>
-<li>回归一般用relu函数即可。如上，隐层为两层，每层包含10个神经元。<h3 id="6、模型编译"><a href="#6、模型编译" class="headerlink" title="6、模型编译"></a>6、模型编译</h3>  <code>loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys-prediction), reduction_indices=[1]))
-   train_step = tf.train.GradientDescentOptimizer(0.1).minimize(loss)</code></li>
-<li>设计网络的损失函数与优化器，常用的优化器还包括SGD、Adam、Momentum等，优化器能加速网络的训练速度，与学习率相关。<h3 id="7、参数初始化"><a href="#7、参数初始化" class="headerlink" title="7、参数初始化"></a>7、参数初始化</h3><code>sess = tf.Session()
-init = tf.global_variables_initializer()
-sess.run(init)</code></li>
-<li>整个程序内只要包含变量，必须用tf.global——进行初始化。另外，所有的操作都必须通过会话即session.run(xxx)来执行。<h3 id="8、模型训练"><a href="#8、模型训练" class="headerlink" title="8、模型训练"></a>8、模型训练</h3>  for i in range(1000):<pre><code>sess.run(train_step, feed_dict={xs: x_data, ys: y_data})</code></pre></li>
-<li>feeddict包含的是输入数据，将数据输入至train_step中进行训练。<h3 id="9、代码已上传本人github-其主要根据莫烦代码修改而成。"><a href="#9、代码已上传本人github-其主要根据莫烦代码修改而成。" class="headerlink" title="9、代码已上传本人github,其主要根据莫烦代码修改而成。"></a>9、代码已上传<a href="https://github.com/Gtt-rgb/study_tensorflow" target="_blank" rel="noopener">本人github</a>,其主要根据莫烦代码修改而成。</h3></li>
-</ul>
-<h3 id="参考文献：1、莫烦tensorflow教程"><a href="#参考文献：1、莫烦tensorflow教程" class="headerlink" title="参考文献：1、莫烦tensorflow教程"></a>参考文献：1、<a href="https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/3-4-A-speed-up-learning/" target="_blank" rel="noopener">莫烦tensorflow教程</a></h3>
-      
-      <!-- reward -->
-      
-    </div>
-    
-    
-      <!-- copyright -->
-      
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%93%BE%E6%8E%A5/" rel="tag">链接</a></li></ul>
-
-
-    </footer>
-
-  </div>
-
-  
-
-  
-  
-  
-
-  
-
-</article>
-    
     <article id="post-ubuntu搭建ROS开发环境" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -559,7 +459,7 @@ sess.run(init)</code></li>
     <ul class="list-inline">
       <li>
         &copy;
-        2015-2020
+        2015-2021
         高腾腾
       </li>
       <li>
